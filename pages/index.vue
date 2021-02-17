@@ -1,17 +1,18 @@
 <template>
   <div class="container">
-    
-    <label for="fname" class="labBalance">Account Balance:</label>
-    <input
-      type="number"
-      id="account"
-      name="account"
-      placeholder="Account Balance"
-    />
+  
+    <h2>Select currency</h2>
+     <select class="custominput"  @change="onchange">
+     
+      <option v-for="(fiat, index) in currency " :key="index" :value="fiat.currency">{{fiat.naam}}</option>
+    </select>
+      <h2> Account balance</h2>
+   <Currencyinput class="custominput" :currency="chosecurrency"/>
 
-    <label for="frisk" class="risk">Risk manangement:</label>
-    <input type="number" id="risk" name="risk" placeholder="Risk %" />
-    <label for="fpips" class="pips">Stop loss in pips:</label>
+    <h2>Risk management </h2>
+    <Procent class="custominput"/>
+   
+   <h2>Stop loss in pips:</h2>
     <input
       type="number"
       id="pips"
@@ -38,8 +39,23 @@
 </template>
 
 <script>
+import Procent from '../components/Procent.vue';
 export default {
+  components: { Procent },
+  data() {
+    return {
+      chosecurrency: '&euro;'
+    }
+  },
+  computed: {
+    currency() {
+      return this.$store.state.valuta
+    }
+  },
 methods: {
+  onchange(event) {
+    this.chosecurrency = event.target.value
+  },
      volgende(){
     this.$router.push('/currency');
      }
@@ -94,6 +110,9 @@ select {
   border-radius: 4px;
   box-sizing: border-box;
   /* margin-top: 50px; */
+}
+.custominput{
+  margin-bottom: 30px;
 }
 
 </style>

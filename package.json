@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
+    "autonumeric": "^4.6.0",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
-    "vanilla-tilt": "^1.7.0"
+    "vanilla-tilt": "^1.7.0",
+    "vue-currency-input": "^1.22.6"
   },
   "devDependencies": {}
 }
