@@ -22,14 +22,15 @@
 
 <style scoped>
 .Navigatie {
-  height: 60px;
+  min-height: 60px;
   width: 100%;
   min-width: 150px;
   text-align: center;
-  background: linear-gradient(25deg, white aqua, white);
+  backdrop-filter: blur(5px);
   border: none;
   color: black;
   outline: none;
+  position: fixed;
   font-size: 30px;
   padding-top: 8px;
 }

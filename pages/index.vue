@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <NavigatieBar />
+    
     <label for="fname" class="labBalance">Account Balance:</label>
     <input
       type="number"
@@ -18,12 +18,9 @@
       name="pips"
       placeholder="stop loss in pips "
     />
-    
-    <button v-on:click="next(index)" class="next">
-      <p>
-      Select currency pair
 
-      </p>
+    <button v-on:click="volgende(index)" class="button">
+      <p>Select currency pair</p>
       <svg
         class="w-6 h-6"
         fill="currentColor"
@@ -42,28 +39,26 @@
 
 <script>
 export default {
-mounted() {
-    
-    this.$router.push('currency')
+methods: {
+     volgende(){
+    this.$router.push('/currency');
+     }
   },
 };
 </script>
 
+
+
 <style scoped>
-.container {
-  height: 100vh;
-  width: 100vw;
-  padding-bottom: 10px;
-  background: linear-gradient(10deg, white, aqua);
-}
+
 .labBalance {
-  height: 40px;
+  /* height: 40px; */
   width: 50px;
   color: black;
   font-size: 200%;
   background: none;
   width: 100%;
-  display: block;
+  /* display: block; */
   margin-top: 50px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -100,28 +95,5 @@ select {
   box-sizing: border-box;
   /* margin-top: 50px; */
 }
-.next {
-  width: calc(100% - 20px);
-  max-width: 430px;
-  height: 40px;
-  border: none;
-  background: black;
-  color: white;
-   display: flex;
-  /* justify-content: center; */
-  align-items: center;
-  padding-right: 10px;
-  margin: 0 auto;
-  margin-top: 50px;
-  border-radius: 5px;
-}
-.next p {
-  flex: 1;
-  line-height: 40px;
-  font-size: 20px;
-}
-.next svg {
-  height: 80%;
-}
-  
+
 </style>

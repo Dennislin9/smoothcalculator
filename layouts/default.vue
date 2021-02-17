@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NavigatieBar />
     <Nuxt />
   </div>
 </template>
@@ -30,33 +31,39 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.container {
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  padding-top: 200px;
+  background: linear-gradient(10deg, rgb(53, 42, 209), white);
 }
+.button {
+  width: calc(100% - 20px);
+  max-width: 430px;
+  height: 40px;
+  border: none;
+  position: fixed;
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  padding-right: 10px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 5px;
 }
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.button p {
+  flex: 1;
+  line-height: 40px;
+  font-size: 20px;
 }
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.button svg {
+  height: 80%;
 }
 </style>
