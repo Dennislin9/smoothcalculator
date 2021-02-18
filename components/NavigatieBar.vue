@@ -19,6 +19,14 @@
 </h2>
 </template>
 
+<script>
+export default {
+  methods:{
+    
+  }
+}
+</script>
+
 
 <style scoped>
 .Navigatie {

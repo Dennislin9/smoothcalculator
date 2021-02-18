@@ -11,29 +11,39 @@
 </template>
 <script>
 import AutoNumeric from "autonumeric";
+import Cookie from 'js-cookie'
 export default {
   props: ["currency"],
   methods: {
     check(e) {
+      this.$store.state.gekozenbalance = e.target.innerHTML
+      Cookie.set('prevbalance', e.target.innerHTML)
       if (e.key == "Backspace" || "Enter") {
       } else if (isNaN(String.fromCharCode(e.which))) {
         e.preventDefault();
       }
     },
+    gekozenbalance() {
+      return this.$store.state.gekozenbalance;
+    },
+    balance(){
+
+    },
   },
   mounted() {
+    document.querySelector('.input').innerHTML = Cookie.get('prevbalance')
     const autoNumericOptionsEuro = {
       digitGroupSeparator: ".",
       decimalCharacter: ",",
       decimalCharacterAlternative: ".",
- 
+
       currencySymbolPlacement:
         AutoNumeric.options.currencySymbolPlacement.suffix,
       roundingMethod: AutoNumeric.options.roundingMethod.halfUpSymmetric,
     };
 
     // Initialization
-    new AutoNumeric('.input', autoNumericOptionsEuro);
+    new AutoNumeric(".input", autoNumericOptionsEuro);
   },
 };
 </script>

@@ -1,4 +1,11 @@
 export const state = () => ({
+    /**
+     * TODOs
+     * -check als eerste en tweede waarde niet gelijk zijn
+     * - niet meer dan 2 waarde toegevoegd 
+     */
+    gekozenvaluta: [],
+    gekozenbalance: 0,
     valuta: [
         {
             currency: '&#8371;',
@@ -35,6 +42,8 @@ export const state = () => ({
     ],
 
 })
+
+
 
 // export const actions = {
 

@@ -1,13 +1,15 @@
 <template>
   <div class="container">
-  
+   {{chosenbalance}}
     <h2>Select currency</h2>
      <select class="custominput"  @change="onchange">
      
       <option v-for="(fiat, index) in currency " :key="index" :value="fiat.currency">{{fiat.naam}}</option>
     </select>
       <h2> Account balance</h2>
-   <Currencyinput class="custominput" :currency="chosecurrency"/>
+   <Currencyinput  class="custominput" :currency="chosecurrency" />
+  
+   
 
     <h2>Risk management </h2>
     <Procent class="custominput"/>
@@ -20,7 +22,7 @@
       placeholder="stop loss in pips "
     />
 
-    <button v-on:click="volgende(index)" class="button">
+    <button v-on:click="volgende(index)" class="button ">
       <p>Select currency pair</p>
       <svg
         class="w-6 h-6"
@@ -50,15 +52,21 @@ export default {
   computed: {
     currency() {
       return this.$store.state.valuta
-    }
-  },
+    },
+    chosenbalance() {
+      return this.$store.state.gekozenbalance;
+    },
+ },
 methods: {
   onchange(event) {
     this.chosecurrency = event.target.value
   },
      volgende(){
     this.$router.push('/currency');
-     }
+     },
+
+
+
   },
 };
 </script>
@@ -111,6 +119,10 @@ select {
   box-sizing: border-box;
   /* margin-top: 50px; */
 }
+/* .thrash{
+ background: purple;
+
+} */
 .custominput{
   margin-bottom: 30px;
 }
