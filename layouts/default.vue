@@ -4,18 +4,26 @@
     <Nuxt />
   </div>
 </template>
+<script>
+import Cookie from "js-cookie";
+export default {
+  mounted() {
+    this.$store.state.balancecurrency = Cookie.get("balancecurrency")
+    this.$store.state.gekozenbalance = Cookie.get("prevbalance")
+    this.$store.state.gekozenrisk = Cookie.get("prevrisk")
+    this.$store.state.gekozenpips =  Cookie.get("prevpips");
 
+
+    console.log(    this.$store.state.balancecurrency = Cookie.get("balancecurrency"),
+    this.$store.state.gekozenbalance = Cookie.get("prevbalance"),
+    this.$store.state.gekozenrisk = Cookie.get("prevrisk"))
+  },
+};
+</script>
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -67,7 +75,6 @@ html {
   height: 80%;
 }
 
-
 .custom-select {
   position: relative;
   font-family: Arial;
@@ -100,7 +107,8 @@ html {
 }
 
 /*style the items (options), including the selected item:*/
-.select-items div,.select-selected {
+.select-items div,
+.select-selected {
   color: #ffffff;
   padding: 8px 16px;
   border: 1px solid transparent;
@@ -124,7 +132,8 @@ html {
   display: none;
 }
 
-.select-items div:hover, .same-as-selected {
+.select-items div:hover,
+.same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
 </style>

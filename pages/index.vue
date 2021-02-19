@@ -70,7 +70,6 @@ export default {
 
     // console.log(this.$store.state.valuta.find(e => e.naam ==  this.$store.state.balancecurrency).currency)
       document.querySelector('.balancecurrency').value = Cookie.get('balancecurrency')
-     this.$store.state.balancecurrency = Cookie.get('balancecurrency')
   },
   methods: {
     onchange(event) {

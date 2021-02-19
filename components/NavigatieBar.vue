@@ -20,11 +20,13 @@
 </template>
 
 <script>
+import Cookie from 'js-cookie'
 export default {
   methods:{
     thrash(){
      this.$store.state.gekozenvaluta =[]
-     }
+      Cookie.remove('pair')
+  }
   }
 }
 </script>

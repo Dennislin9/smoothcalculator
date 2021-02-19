@@ -37,7 +37,6 @@ export default {
   },
   mounted() {
     document.querySelector(".percentage").value = Cookie.get("prevrisk");
-     this.$store.state.gekozenrisk =Cookie.get("prevrisk");
 
   },
 };

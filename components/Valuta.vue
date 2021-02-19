@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import Cookie from "js-cookie";
 export default {
   props: ["name", "currency"],
   data() {
@@ -20,22 +21,31 @@ export default {
       return this.$store.state.gekozenvaluta;
     },
   },
+  mounted() {
+
+    // console.log('Cookie.get()')
+    typeof Cookie.get('pair') == 'undefined' ? console.log('no pair chosen yet') : this.$store.state.gekozenvaluta = JSON.parse(Cookie.get('pair'))
+    // this.$store.state.gekozenvaluta = Cookie.get("pair");
+  },
   methods: {
     valuta(nieuwevaluta) {
       if (this.gekozenvaluta.length > 0) {
         //find chosen valuta in array
-        
-        let alreadychosen = this.$store.state.gekozenvaluta.find(element => element  == nieuwevaluta);
-        if (typeof alreadychosen == 'undefined') {
-          if(this.gekozenvaluta.length < 2) {
-            //nieuwe valuta toevoegen
-            this.$store.state.gekozenvaluta.push(nieuwevaluta)
 
+        let alreadychosen = this.$store.state.gekozenvaluta.find(
+          (element) => element == nieuwevaluta
+        );
+        if (typeof alreadychosen == "undefined") {
+          if (this.gekozenvaluta.length < 2) {
+            //nieuwe valuta toevoegen
+            this.$store.state.gekozenvaluta.push(nieuwevaluta);
+            Cookie.set("pair", this.$store.state.gekozenvaluta);
           }
         }
       } else {
         //eerste valuta toevoegen
-         this.$store.state.gekozenvaluta.push(nieuwevaluta)
+        this.$store.state.gekozenvaluta.push(nieuwevaluta);
+        Cookie.set("pair", this.$store.state.gekozenvaluta);
       }
       // this.$store.state.gekozenvaluta = nieuwevaluta;
     },

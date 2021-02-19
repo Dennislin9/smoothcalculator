@@ -37,7 +37,6 @@ export default {
   },
   mounted() {
     document.querySelector('.currencyinput').innerHTML = Cookie.get('prevbalance')
-    this.$store.state.gekozenbalance = Cookie.get('prevbalance')
     
     const autoNumericOptionsEuro = {
       digitGroupSeparator: ".",

@@ -23,7 +23,6 @@ export default {
   mounted() {
     
     document.querySelector("#pips").value = Cookie.get("prevpips");
-     this.$store.state.gekozenpips =  Cookie.get("prevpips");
   },
 };
 </script>
