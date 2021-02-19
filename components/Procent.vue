@@ -1,40 +1,44 @@
 <template>
   <div class="wrap">
     <div class="currency">%</div>
-    <div
+    <input
+      type="text"
+      maxlength="2"
       class="input percentage"
-      contenteditable="true"
+      max="4"
       placeholder="voer tekst in"
-      @keyup="check"
-    ></div>
+      @keyup="check2"
+      @keydown="check"
+      v-html="risk"
+    />
   </div>
 </template>
 <script>
+import Cookie from "js-cookie";
 import AutoNumeric from "autonumeric";
+
 export default {
-  props: ["currency"],
+  props: ["risk"],
+
   methods: {
+    check2(e) {
+      Cookie.set("prevrisk", e.target.value);
+      this.$store.state.gekozenrisk = e.target.value;
+    },
     check(e) {
-        if(parseInt(e.target.innerHTML) > 100) {
-            e.target.innerHTML = ''
-            e.target.innerHTML = 100
-        }
       if (e.key == "Backspace" || "Enter") {
-      } else if (isNaN(String.fromCharCode(e.which))) {
+      } else if (!isNaN(e.which)) {
+        console.log('is not a number')
+
         e.preventDefault();
       }
     },
+
   },
   mounted() {
-    // const autoNumericOptionsEuro = {
-    //   digitGroupSeparator: ".",
-    //   decimalCharacter: ",",
-    //   decimalCharacterAlternative: ".",
-    //   percentageUS2dec: true,
-    // };
+    document.querySelector(".percentage").value = Cookie.get("prevrisk");
+     this.$store.state.gekozenrisk =Cookie.get("prevrisk");
 
-    // // Initialization
-    // new AutoNumeric(".percentage", autoNumericOptionsEuro);
   },
 };
 </script>

@@ -1,28 +1,28 @@
 <template>
   <div class="container">
-   {{chosenbalance}}
+    {{ chosenbalance }}
+    {{ chosenrisk }}
+    {{ chosenpips }}
     <h2>Select currency</h2>
-     <select class="custominput"  @change="onchange">
-     
-      <option v-for="(fiat, index) in currency " :key="index" :value="fiat.currency">{{fiat.naam}}</option>
+    <select class="custominput balancecurrency" @change="onchange">
+      <option
+        v-for="(fiat, index) in currency"
+        :key="index"
+        :value="fiat.currency"
+      >
+        {{ fiat.naam }}
+      </option>
     </select>
-      <h2> Account balance</h2>
-   <Currencyinput  class="custominput" :currency="chosecurrency" />
-  
-   
+    <h2>Account balance</h2>
+    <Currencyinput class="custominput" :currency="chosecurrency" />
 
-    <h2>Risk management </h2>
-    <Procent class="custominput"/>
-   
-   <h2>Stop loss in pips:</h2>
-    <input
-      type="number"
-      id="pips"
-      name="pips"
-      placeholder="stop loss in pips "
-    />
+    <h2>Risk management</h2>
+    <Procent class="custominput" :risk="chosenrisk" />
 
-    <button v-on:click="volgende(index)" class="button ">
+    <h2>Stop loss in pips:</h2>
+   <Pips/>
+
+    <button v-on:click="volgende(index)" class="button">
       <p>Select currency pair</p>
       <svg
         class="w-6 h-6"
@@ -41,32 +41,46 @@
 </template>
 
 <script>
-import Procent from '../components/Procent.vue';
+import AutoNumeric from "autonumeric";
+import Cookie from "js-cookie";
+import Procent from "../components/Procent.vue";
+import Pips from '../components/Pips.vue';
 export default {
   components: { Procent },
-  data() {
-    return {
-      chosecurrency: '&euro;'
-    }
-  },
+
   computed: {
     currency() {
-      return this.$store.state.valuta
+      return this.$store.state.valuta;
     },
     chosenbalance() {
       return this.$store.state.gekozenbalance;
     },
- },
-methods: {
-  onchange(event) {
-    this.chosecurrency = event.target.value
+    chosenrisk() {
+      return this.$store.state.gekozenrisk;
+    },
+    chosenpips() {
+      return this.$store.state.gekozenpips;
+    },
+    chosecurrency() {
+      return this.$store.state.valuta.find(e => e.naam ==  this.$store.state.balancecurrency)
+    }
   },
-     volgende(){
-    this.$router.push('/currency');
-     },
+  mounted() {
+      console.log(this.$store.state.valuta.find(e => true))
 
-
-
+    // console.log(this.$store.state.valuta.find(e => e.naam ==  this.$store.state.balancecurrency).currency)
+      document.querySelector('.balancecurrency').value = Cookie.get('balancecurrency')
+     this.$store.state.balancecurrency = Cookie.get('balancecurrency')
+  },
+  methods: {
+    onchange(event) {
+      Cookie.set('balancecurrency', event.target.value)
+      this.$store.state.balancecurrency = event.target.value;
+    },
+    volgende() {
+      this.$router.push("/currency");
+    },
+    
   },
 };
 </script>
@@ -74,7 +88,6 @@ methods: {
 
 
 <style scoped>
-
 .labBalance {
   /* height: 40px; */
   width: 50px;
@@ -119,12 +132,7 @@ select {
   box-sizing: border-box;
   /* margin-top: 50px; */
 }
-/* .thrash{
- background: purple;
-
-} */
-.custominput{
+.custominput {
   margin-bottom: 30px;
 }
-
 </style>

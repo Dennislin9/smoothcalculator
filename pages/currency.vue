@@ -8,7 +8,10 @@
         :key="index"
       />
     </div>
-    {{ chosencurrency[0] }} /  {{ chosencurrency[1] }}
+
+    <div class="returnvaluta">
+      {{ chosencurrency[0] }} / {{ chosencurrency[1] }}
+    </div>
 
     <button v-on:click="vorige" class="button">
       <svg
@@ -72,6 +75,19 @@ export default {
 
 
 <style scoped>
+.returnvaluta {
+  width: 80%;
+  height: 40px;
+  left: 50%;
+  background: none;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+}
 .button {
   width: 40%;
   height: 40px;

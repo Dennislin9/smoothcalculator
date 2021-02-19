@@ -2,10 +2,10 @@
   <div class="wrap">
     <div class="currency" v-html="currency"></div>
     <div
-      class="input"
+      class="input currencyinput"
       contenteditable="true"
+      @keyup="check2"
       placeholder="voer tekst in"
-      @keydown="check"
     ></div>
   </div>
 </template>
@@ -15,23 +15,30 @@ import Cookie from 'js-cookie'
 export default {
   props: ["currency"],
   methods: {
-    check(e) {
-      this.$store.state.gekozenbalance = e.target.innerHTML
-      Cookie.set('prevbalance', e.target.innerHTML)
-      if (e.key == "Backspace" || "Enter") {
-      } else if (isNaN(String.fromCharCode(e.which))) {
-        e.preventDefault();
-      }
+    check2(e) {
+
+      Cookie.set('prevbalance', e.target.innerHTML.replace('.', ''))
+      this.$store.state.gekozenbalance =  e.target.innerHTML.replace('.', '')
+     
     },
+    // check(e) {
+    //   if (e.key == "Backspace" || "Enter") {
+    //   } else if (isNaN(String.fromCharCode(e.which))) {
+    //     e.preventDefault();
+    //   }
+    // },
     gekozenbalance() {
       return this.$store.state.gekozenbalance;
     },
-    balance(){
-
+    gekozenrisk() {
+      return this.$store.state.gekozenrisk;
     },
+    
   },
   mounted() {
-    document.querySelector('.input').innerHTML = Cookie.get('prevbalance')
+    document.querySelector('.currencyinput').innerHTML = Cookie.get('prevbalance')
+    this.$store.state.gekozenbalance = Cookie.get('prevbalance')
+    
     const autoNumericOptionsEuro = {
       digitGroupSeparator: ".",
       decimalCharacter: ",",
@@ -43,7 +50,7 @@ export default {
     };
 
     // Initialization
-    new AutoNumeric(".input", autoNumericOptionsEuro);
+    new AutoNumeric(".currencyinput", autoNumericOptionsEuro);
   },
 };
 </script>

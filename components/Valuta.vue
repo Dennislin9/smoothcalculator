@@ -24,9 +24,8 @@ export default {
     valuta(nieuwevaluta) {
       if (this.gekozenvaluta.length > 0) {
         //find chosen valuta in array
-        console.log(typeof this.gekozenvaluta)
+        
         let alreadychosen = this.$store.state.gekozenvaluta.find(element => element  == nieuwevaluta);
-        console.log(alreadychosen)
         if (typeof alreadychosen == 'undefined') {
           if(this.gekozenvaluta.length < 2) {
             //nieuwe valuta toevoegen

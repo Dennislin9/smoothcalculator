@@ -22,7 +22,9 @@
 <script>
 export default {
   methods:{
-    
+    thrash(){
+     this.$store.state.gekozenvaluta =[]
+     }
   }
 }
 </script>

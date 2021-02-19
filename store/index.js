@@ -4,8 +4,11 @@ export const state = () => ({
      * -check als eerste en tweede waarde niet gelijk zijn
      * - niet meer dan 2 waarde toegevoegd 
      */
+    balancecurrency: 'EUR',
     gekozenvaluta: [],
     gekozenbalance: 0,
+    gekozenrisk:0,
+    gekozenpips:0,
     valuta: [
         {
             currency: '&#8371;',
