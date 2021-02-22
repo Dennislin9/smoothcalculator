@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    {{ chosenbalance }}
+    <!-- {{ chosenbalance }}
     {{ chosenrisk }}
-    {{ chosenpips }}
+    {{ chosenpips }} -->
     <h2>Select currency</h2>
     <select class="custominput balancecurrency" @change="onchange">
       <option

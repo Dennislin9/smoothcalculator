@@ -2,12 +2,15 @@
   <div class="container">
     <div class="pair"></div>
     <div class="titles">
-      <div class="title">risk</div>
-      <div class="title">risk amound</div>
+      <div class="title risktitle">
+        Risk
+      </div>
+      
+      <div class="title amounttitle">Risk amount</div>
     </div>
     <div class="basicinfo">
-      <div class="risk">{{chosenrisk}}%</div>
-      <div class="riskamount">{{chosecurrency}}{{risk}}</div>
+      <div class="risk">{{ chosenrisk }}%</div>
+      <div class="riskamount">{{ chosecurrency }}{{ risk }}</div>
     </div>
     <div class="steps">
       <div class="titles">
@@ -21,11 +24,26 @@
         </li>
       </ul>
     </div>
+    <button v-on:click="vorige" class="button">
+      <svg
+        class="w-6 h-6"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+      <p>Back</p>
+    </button>
   </div>
 </template>
 
 <script>
-import Cookie from 'js-cookie'
+import Cookie from "js-cookie";
 export default {
   computed: {
     currency() {
@@ -46,11 +64,11 @@ export default {
       );
     },
     rate() {
-      return this.$store.state.rate
+      return this.$store.state.rate;
     },
     risk() {
-      return (this.chosenbalance / 100) * this.chosenrisk
-    }
+      return (this.chosenbalance / 100) * this.chosenrisk;
+    },
   },
   methods: {
     back() {
@@ -62,12 +80,12 @@ export default {
         let risk = this.chosenrisk;
         let pips = this.chosenpips;
         let rate = this.rate;
-        console.log(rate)
+        console.log(rate);
         let totalrisk = (balance / 100) * risk;
         let lotsize = (totalrisk * rate * 100000) / (pips * 10) / 100000;
         return lotsize;
       } else {
-         let balance = this.chosenbalance;
+        let balance = this.chosenbalance;
         let risk = this.chosenrisk;
         // let pips = this.chosenpips;
         let rate = this.rate;
@@ -76,9 +94,13 @@ export default {
         return lotsize;
       }
     },
+    vorige() {
+      // alert('adjashjasdjkh')
+      this.$router.push("/currency");
+    },
   },
   mounted() {
-    this.$store.dispatch('getcurrencies', JSON.parse(Cookie.get('pair'))[1])
+    this.$store.dispatch("getcurrencies", JSON.parse(Cookie.get("pair"))[1]);
   },
 };
 </script>
@@ -86,6 +108,22 @@ export default {
 body {
   margin: 0;
 }
+.button {
+  width: 90%;
+  height: 40px;
+  border: none;
+  position: fixed;
+  margin-top: 20px;
+}
+ .basicinfo {
+  width: 20%;
+  height: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 30px;
+}
+
 .container {
   height: 100vh;
   width: 100vw;
@@ -125,6 +163,10 @@ body {
 .titles {
   display: flex;
   height: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
 }
 .titles .title {
   flex: 1;
@@ -152,5 +194,9 @@ li .stoploss {
 li .lots {
   flex: 1;
   text-align: center;
+}
+.titles {
+  color: black;
+
 }
 </style>

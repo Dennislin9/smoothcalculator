@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.12.5",
+    "@nuxtjs/pwa": "^3.3.5",
     "autonumeric": "^4.6.0",
     "core-js": "^3.8.3",
     "js-cookie": "^2.2.1",
