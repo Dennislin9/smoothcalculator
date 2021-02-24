@@ -12,7 +12,7 @@ export default {
     this.$store.state.gekozenbalance = Cookie.get("prevbalance")
     this.$store.state.gekozenrisk = Cookie.get("prevrisk")
     this.$store.state.gekozenpips =  Cookie.get("prevpips");
-
+    this.$store.state.instagramnaam = Cookie.get('previnstanaam')
 
     console.log(    this.$store.state.balancecurrency = Cookie.get("balancecurrency"),
     this.$store.state.gekozenbalance = Cookie.get("prevbalance"),

@@ -1,5 +1,6 @@
 <template>
   <h2 class="Navigatie">SmoothCalculator
+    <button v-on:click= "instagram" class="instagram"> instagram</button>
 <button v-on:click="thrash(index)" class="thrash">
   <svg
     class="w-6 h-6"
@@ -26,6 +27,9 @@ export default {
     thrash(){
      this.$store.state.gekozenvaluta =[]
       Cookie.remove('pair')
+  },
+  instagram(){
+  this.$router.push("/instagram");
   }
   }
 }
@@ -62,6 +66,17 @@ li {
   color: black;
   position: absolute;
   right: 10px;
+  top: 7px;
+  
+}
+.instagram{
+   width: 90px;
+  border: none;
+  background: none;
+  color: black;
+  background: purple;
+  position: absolute;
+  left: 10px;
   top: 7px;
   
 }

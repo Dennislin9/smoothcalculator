@@ -8,7 +8,7 @@
       <option
         v-for="(fiat, index) in currency"
         :key="index"
-        :value="fiat.currency"
+        :value="fiat.naam"
       >
         {{ fiat.naam }}
       </option>
@@ -66,10 +66,15 @@ export default {
     }
   },
   mounted() {
-      console.log(this.$store.state.valuta.find(e => true))
-
-    // console.log(this.$store.state.valuta.find(e => e.naam ==  this.$store.state.balancecurrency).currency)
+      // console.log(this.$store.state.valuta.find(e => true))
+      // this.$store.dispatch('createcountry', {
+      //   inhabitants: 900000000012323,
+      //   name: 'Korea'
+      // })
+    console.log(this.$store.state.balancecurrency)
+    // console.log(this.$store.state.valuta.find(e => e.naam ==  this.$store.state.balancecurrency))
       document.querySelector('.balancecurrency').value = Cookie.get('balancecurrency')
+      console.log(Cookie.get('balancecurrency'))
   },
   methods: {
     onchange(event) {
