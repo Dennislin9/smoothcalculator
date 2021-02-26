@@ -2,11 +2,16 @@
   <div>
     <NavigatieBar />
     <Nuxt />
+    <sidebar/>
   </div>
 </template>
 <script>
 import Cookie from "js-cookie";
+import sidebar from '@/components/Sidebar'
 export default {
+  components: {
+    sidebar
+  },
   mounted() {
     this.$store.state.balancecurrency = Cookie.get("balancecurrency")
     this.$store.state.gekozenbalance = Cookie.get("prevbalance")

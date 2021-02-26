@@ -3,7 +3,7 @@
     <!-- {{ chosenbalance }}
     {{ chosenrisk }}
     {{ chosenpips }} -->
-    <h2>Select currency</h2>
+    <h2>Select Currency</h2>
     <select class="custominput balancecurrency" @change="onchange">
       <option
         v-for="(fiat, index) in currency"
@@ -13,10 +13,10 @@
         {{ fiat.naam }}
       </option>
     </select>
-    <h2>Account balance</h2>
+    <h2>Account Balance</h2>
     <Currencyinput class="custominput" :currency="chosecurrency" />
 
-    <h2>Risk management</h2>
+    <h2>Risk </h2>
     <Procent class="custominput" :risk="chosenrisk" />
 
     <h2>Stop loss in pips:</h2>

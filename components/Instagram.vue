@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    {{ input}}
+  <div class="hallo">
+         
+    
     <h2>Name</h2>
     <input
       class="instanaam"
@@ -19,8 +20,14 @@
       v-model="input.instaemail"
       @keyup="checkmail"
     />
-    <button v-on:click="volgende(index)" class="button">
-      Instagram: SmoothPips
+    <button v-on:click="volgende(index)" class="buttonsend">
+      <p>Send</p>
+    </button>
+
+    
+    <button v-on:click="instagram" class=" instagram">
+      <img src="/instagram.png" alt="">
+      
     </button>
   </div>
 </template>
@@ -39,11 +46,19 @@ export default {
   methods: {
     volgende() {
     //   this.$router.push("/currency");
-      
+    
       this.$store.dispatch("sendinvite", {
         email: this.input.instaemail,
         name: this.input.instanaam,
       });
+    },
+     vorige() {
+      console.log("het werkt")
+      this.$router.push("/");
+    },
+    instagram() {
+      console.log("het werkt")
+      window.open('https://www.instagram.com/smoothpips.official/');
     },
     checkmail(e) {
       console.log("check");
@@ -89,5 +104,48 @@ select {
   box-sizing: border-box;
   /* margin-top: 50px; */
 }
+
+.buttonsend {
+  width: 315px;
+  height: 30px;
+  border: none;
+  top: 220px;
+  text-align: center;
+   border: none;
+  position: center;
+  background: rgb(126, 126, 243);
+  
+  border-radius: 4px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+.button {
+  width: 40%;
+  height: 40px;
+  border: none;
+  position: fixed;
+  left: 25%;
+  background: black;
+}
+.instagram {
+  width: 50px;
+   height: 50px;
+  border: none;
+  background: none;
+  color: black;
+ 
+  position: absolute;
+  left: 40%;
+  bottom: 50px;
+}
+.instagram img{
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+
+}
+.hallo{
+  margin-top: 250px;
+}
+
 </style>
 
