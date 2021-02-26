@@ -49,7 +49,7 @@ export default {
       this.sidebarstyle.display = "block";
       this.$store.state.showmenu = "open";
 
-      this.contentstyle.transform = "translateX(0)";
+      this.contentstyle.transform = "translateX(-100)";
       console.log(this.contentstyle);
       document.querySelector(".overlay").style["display"] = "block";
     },
@@ -57,7 +57,7 @@ export default {
       console.log("werkt");
       this.sidebarstyle.display = "none";
       this.$store.state.showmenu = "closed";
-      this.contentstyle.transform = "translatex(100%)";
+      this.contentstyle.transform = "translatex(0%)";
       document.querySelector(".overlay").style["display"] = "none";
     },
     logo() {
@@ -89,9 +89,9 @@ export default {
   width: calc(100vw - 40px);
   height: 100%;
 
-  align-content: right;
+  align-content: left;
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
   padding: 10px;
   transition: all 0.3s ease;
