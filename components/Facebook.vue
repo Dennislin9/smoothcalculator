@@ -28,7 +28,7 @@ input,
 
   position: absolute;
   left: 20%;
-  bottom: 50px;
+  bottom: 80px;
 }
 .facebook img {
   height: 100%;

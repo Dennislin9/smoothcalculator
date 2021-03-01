@@ -28,7 +28,7 @@ input,
 
   position: absolute;
   left: 60%;
-  bottom: 50px;
+  bottom: 80px;
 }
 .linkin img {
   height: 100%;

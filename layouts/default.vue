@@ -58,7 +58,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   color:#363636;
-  font-family: 'Poppins' !important;
+  font-family: 'Poppins';
   
 }
 

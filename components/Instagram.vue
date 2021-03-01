@@ -135,7 +135,7 @@ select {
  
   position: absolute;
   left: 40%;
-  bottom: 50px;
+  bottom: 80px;
 }
 .instagram img{
   height: 100%;
