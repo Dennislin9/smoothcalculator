@@ -52,7 +52,7 @@ export default {
   margin-top: 7px;
   border: none;
   margin-bottom: 30px;
-  box-shadow: 2px 8px 20px rgba(13, 143,254, 15%);
+  box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
 }
 .wrap .currency {
   min-width: 60px;

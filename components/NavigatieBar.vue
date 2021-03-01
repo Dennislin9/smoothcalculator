@@ -1,7 +1,7 @@
 <template>
   <h2 class="Navigatie">
     <button v-on:click="calculate" class="calculate">
-      <img src="/logoo.jpg" alt="">
+      <img src="/logo.png" alt="">
     </button>
  
     <button v-on:click="menu" class="menu">
