@@ -1,13 +1,13 @@
 <template>
   <div class="wrap">
     <div class="currency" v-html="currency.currency"></div>
-    <!-- {{'currency' in currency? currency.currency : currency}} -->
     <div
       class="input currencyinput"
       contenteditable="true"
       @keyup="check2"
       placeholder="voer tekst in"
-    ></div>
+    >
+    </div>
   </div>
 </template>
 <script>
@@ -37,6 +37,7 @@ export default {
     
   },
   mounted() {
+    console.log(this.currency.currency)
     console.log(Cookie.get('prevbalance'))
     document.querySelector('.currencyinput').innerHTML = Cookie.get('prevbalance')
     
