@@ -48,11 +48,21 @@ export default {
   line-height: 50px;
   background: white;
   border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 7px;
+  border: none;
+  margin-bottom: 30px;
+  box-shadow: 2px 8px 20px rgba(13, 143,254, 15%);
 }
 .wrap .currency {
-  min-width: 40px;
+  min-width: 60px;
+  border-radius: 10px;
+  background:#3DCBf8;
+  color:white;
+  
   font-size: 30px;
   text-align: center;
+  
 }
 .input[placeholder]:empty:before {
   content: attr(placeholder);
@@ -60,7 +70,7 @@ export default {
 }
 .input {
   flex: 1;
-  line-height: 30px;
+  line-height: 32px;
   width: 100%;
   padding: 12px 20px;
   /* margin: 8px 0; */
@@ -68,6 +78,8 @@ export default {
   display: inline-block;
   border-radius: 4px;
   background: white;
+  border-radius: 10px;
+  border: none;
   box-sizing: border-box;
   position: relative;
 }

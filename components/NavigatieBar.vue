@@ -1,7 +1,7 @@
 <template>
   <h2 class="Navigatie">
     <button v-on:click="calculate" class="calculate">
-      <img src="/smoothcalc.png" alt="">
+      <img src="/logoo.jpg" alt="">
     </button>
  
     <button v-on:click="menu" class="menu">
@@ -48,6 +48,9 @@ export default {
   methods: {
     thrash() {
       this.$store.state.gekozenvaluta = [];
+      for(let i = 0; i < this.$store.state.valuta.length; i++) {
+        this.$store.state.valuta[i].selected = false
+      }
       Cookie.remove("pair");
     },
 
@@ -115,6 +118,7 @@ li {
   top: 7px;
 }
 .calculate{
+  margin-top: 10px;
    width: 250px;
   height: 45px;
   background: none;

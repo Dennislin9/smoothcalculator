@@ -11,7 +11,7 @@
     <Currencyinput class="custominput" :currency="chosencurrency" />
 
     <h2>Risk</h2>
-    <Procent class="custominput" :risk="chosenrisk" />
+    <Procent class="  " :risk="chosenrisk" />
 
     <h2>Stop loss in pips:</h2>
     <Pips />
@@ -91,29 +91,33 @@ export default {
 
 <style scoped>
 .labBalance {
-  /* height: 40px; */
+  
+  height: 40px; 
   width: 50px;
-  color: black;
+  color:black;
   font-size: 200%;
   background: none;
   width: 100%;
-  /* display: block; */
+  border: none;
   margin-top: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  
+  
 }
 .risk {
   height: 40px;
-  width: 50px;
+  width: 40px;
   color: black;
   font-size: 200%;
   background: none;
-  width: 100%;
   display: block;
   margin-top: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  
+ 
 }
 .pips {
-  height: 40px;
+  /* min-height: 780px; */
   width: 50px;
   color: black;
   font-size: 200%;
@@ -121,20 +125,40 @@ export default {
   width: 100%;
   display: block;
   margin-top: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  
+ 
+ 
+}
+.balancecurrency{
+  font-weight: bolder;
+  color: white;
 }
 input[type="number"],
 select {
   width: 100%;
   padding: 12px 20px;
+  height: 48px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 4px;
+  border-radius: 10px;
   box-sizing: border-box;
-  /* margin-top: 50px; */
+  margin-top: 7px;
+  box-shadow: 2px 8px 20px rgba(13, 143,254, 15%)
+
 }
 .custominput {
   margin-bottom: 30px;
+  background:#3DCBf8;
+  border-radius: 10px;
+  margin-top: 7px;
+  border: none;
+  box-shadow: 2px 8px 20px rgba(13, 143,254, 15%);
+ 
 }
+
+
+
 </style>

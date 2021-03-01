@@ -62,12 +62,13 @@ export default {
   height: 50px;
   line-height: 50px;
   background: white;
-  border: 1px solid #ccc;
+  border: none;
 }
 .wrap .currency {
   min-width: 40px;
   font-size: 30px;
   text-align: center;
+  
 }
 .input[placeholder]:empty:before {
   content: attr(placeholder);
@@ -82,7 +83,6 @@ export default {
   outline: none;
   display: inline-block;
   border-radius: 4px;
-  background: white;
   box-sizing: border-box;
   position: relative;
 }

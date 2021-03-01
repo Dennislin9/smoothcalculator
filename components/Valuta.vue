@@ -1,8 +1,8 @@
 <template>
   <div class="money">
-    <button v-on:click="valuta(name)" class="Valuta">
+    <button v-on:click="valuta(name)" :class="`Valuta ${fiat.selected == true ? 'selected' : ''}`">
       <p>{{ name }}</p>
-      <span v-html="currency"></span>
+      <span v-html="currency" class="icon"></span>
     </button>
   </div>
 </template>
@@ -10,7 +10,7 @@
 <script>
 import Cookie from "js-cookie";
 export default {
-  props: ["name", "currency"],
+  props: ["name", "currency", "fiat"],
   data() {
     return {
       chosecurrency: "&euro;",
@@ -29,6 +29,7 @@ export default {
   },
   methods: {
     valuta(nieuwevaluta) {
+     
       if (this.gekozenvaluta.length > 0) {
         //find chosen valuta in array
 
@@ -38,6 +39,8 @@ export default {
         if (typeof alreadychosen == "undefined") {
           if (this.gekozenvaluta.length < 2) {
             //nieuwe valuta toevoegen
+            console.log(this.$store.state.valuta.find(e => e.naam == nieuwevaluta).selected)
+            this.$store.state.valuta.find(e => e.naam == nieuwevaluta).selected = true
             this.$store.state.gekozenvaluta.push(nieuwevaluta);
             Cookie.set("pair", this.$store.state.gekozenvaluta);
           }
@@ -45,6 +48,8 @@ export default {
       } else {
         //eerste valuta toevoegen
         this.$store.state.gekozenvaluta.push(nieuwevaluta);
+            this.$store.state.valuta.find(e => e.naam == nieuwevaluta).selected = true
+
         Cookie.set("pair", this.$store.state.gekozenvaluta);
       }
       // this.$store.state.gekozenvaluta = nieuwevaluta;
@@ -57,17 +62,25 @@ export default {
 
 <style scoped>
 .Valuta {
-  height: 5vh;
+  height: 7vh;
   width: 25vw;
   margin-top: 20px;
   margin-left: 15px;
-  background: blue;
+  background: black;
   float: left;
   border: none;
   display: block;
   color: white;
   outline: none;
-  border-radius: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 8px;
+  font-weight: bold;
+  line-height: 20px;
+}
+.selected {
+  background: #3DCBf8;
+}
+.icon{
+  font-size: 20px;
+  font-weight: normal;
 }
 </style>

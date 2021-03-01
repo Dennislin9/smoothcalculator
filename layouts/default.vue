@@ -48,9 +48,8 @@ export default {
 };
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -58,6 +57,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  color:#363636;
+  
 }
 
 *,
@@ -65,25 +66,27 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+  font-family: Poppins !important;
+  
+
 }
 .container {
   height: 100vh;
   width: 100vw;
   padding: 20px;
-  padding-top: 200px;
-  background: linear-gradient(10deg, rgb(53, 42, 209), white);
+  padding-top: 120px;
+  background: linear-gradient(10deg, white);
 }
 .button {
   width: calc(100% - 20px);
   max-width: 430px;
-  height: 40px;
+  height: 48px;
   border: none;
   position: fixed;
-
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  background: black;
+  background-image: linear-gradient(to left,#0D8FFE,#58CAFB);
   color: white;
   display: flex;
   /* justify-content: center; */
@@ -91,20 +94,25 @@ html {
   padding-right: 10px;
   margin: 0 auto;
   margin-top: 50px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .button p {
+
   flex: 1;
   line-height: 40px;
-  font-size: 20px;
+  font-weight:500;
+  font-size: 18px;
 }
 .button svg {
-  height: 80%;
+  height: 70%;
+  margin-right: 10px;
+  
+  
 }
 
 .custom-select {
   position: relative;
-  font-family: Arial;
+
 }
 
 .custom-select select {
@@ -163,4 +171,5 @@ html {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
+
 </style>

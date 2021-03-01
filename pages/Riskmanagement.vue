@@ -2,20 +2,20 @@
   <div class="container">
     <div class="pair"></div>
     <div class="titles">
-      <div class="title risktitle">
-        Risk
-      </div>
-      
-      <div class="title amounttitle">Risk amount</div>
+      <div class="title risktitle">Risk</div>
+
+      <div class="title amounttitle">Amount</div>
     </div>
     <div class="basicinfo">
       <div class="risk">{{ chosenrisk }}%</div>
-      <div class="riskamount"><span v-html=" chosecurrency.currency"></span>{{ risk.toFixed(2) }}</div>
+      <div class="riskamount">
+        <span v-html="chosecurrency.currency"></span>{{ risk.toFixed(2) }}
+      </div>
     </div>
     <div class="steps">
       <div class="titles">
-        <div class="title">stop loss</div>
-        <div class="title">lot size</div>
+        <div class="title">Stop Loss</div>
+        <div class="title">Lot Size</div>
       </div>
       <ul>
         <li v-for="i in 50" :key="i">
@@ -37,7 +37,7 @@
           clip-rule="evenodd"
         ></path>
       </svg>
-      <p>Back</p>
+      <p class="txt">Back</p>
     </button>
   </div>
 </template>
@@ -112,13 +112,20 @@ body {
   width: 90%;
   height: 40px;
   border: none;
-  position: fixed;
+  position: absolute;
   margin-top: 20px;
 }
- .basicinfo {
+.txt{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.button svg{
+  margin-left: 20px;
+}
+.basicinfo {
   width: 20%;
   height: 40px;
-  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: black;
   font-size: 30px;
@@ -135,7 +142,7 @@ body {
   height: 100px;
   width: 100%;
   line-height: 100px;
-  text-align: center;
+  text-align: left;
 }
 .container .basicinfo {
   height: 100px;
@@ -146,11 +153,13 @@ body {
   flex: 1;
   line-height: 100px;
   text-align: center;
+  color: #0D8FFE;
+ 
 }
 .basicinfo .riskamount {
   flex: 1;
   line-height: 100px;
-
+  color: #0D8FFE;
   text-align: center;
 }
 .container .steps {
@@ -162,11 +171,11 @@ body {
 }
 .titles {
   display: flex;
-  height: 30px;
-  font-family: Arial, Helvetica, sans-serif;
+  height: 10px;
   font-weight: bold;
   color: black;
-  font-size: 20px;
+  font-size: 20px; 
+
 }
 .titles .title {
   flex: 1;
@@ -178,13 +187,14 @@ body {
   overflow-y: auto;
   padding: 0;
   margin: 0;
+  margin-top: 30px;
 }
 
 li {
   width: 100%;
   height: 40px;
   display: flex;
-  /* background: yellow; */
+  
 }
 
 li .stoploss {
@@ -197,6 +207,5 @@ li .lots {
 }
 .titles {
   color: black;
-
 }
 </style>

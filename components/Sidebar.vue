@@ -96,7 +96,7 @@ export default {
   padding: 10px;
   transition: all 0.3s ease;
   z-index: 2;
-  background: whitesmoke;
+  background: white;
 }
 .list {
   display: default;
@@ -106,7 +106,7 @@ export default {
   width: 300px;
   position: fixed;
   left: 20px;
-  background: whitesmoke;
+  background: white;
   border: none;
 }
 .logo img{

@@ -18,34 +18,42 @@ export const state = () => ({
         {
             currency: '&#8371;',
             naam: 'AUD',
+            selected: false,
         },
         {
             currency: '&#8454;',
             naam: 'CAD',
+            selected: false,
         },
         {
             currency: '&#8355;',
             naam: 'CHF',
+            selected: false
         },
         {
             currency: '&euro;',
             naam: 'EUR',
+            selected: false
         },
         {
             currency: '&pound;',
             naam: 'GBP',
+            selected: false
         },
         {
             currency: '&yen;',
             naam: 'JPY',
+            selected: false
         },
         {
             currency: '&dollar;',
             naam: 'NZD',
+            selected: false
         },
         {
             currency: '&dollar;',
             naam: 'USD',
+            selected: false
         },
     ],
 
@@ -79,7 +87,7 @@ export const actions = {
             })
     },
     getcurrencies({ state }, input) {
-        axios.get(`https://data.fixer.io/api/latest?access_key=b504969feab88deff82d096da3520d75&symbols=${input}`)
+        axios.get(`http://data.fixer.io/api/latest?access_key=b504969feab88deff82d096da3520d75&symbols=${input}`)
             .then(response => {
                 if (response.data.rates[input] > 80) {
                     state.rate = response.data.rates[input] / 100
