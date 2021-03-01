@@ -146,7 +146,7 @@ select {
   border-radius: 10px;
   box-sizing: border-box;
   margin-top: 7px;
-  box-shadow: 2px 8px 20px rgba(13, 143,254, 15%)
+  box-shadow: 2px 8px 20px rgba(13, 143,254,.15)
 
 }
 .custominput {
@@ -155,7 +155,7 @@ select {
   border-radius: 10px;
   margin-top: 7px;
   border: none;
-  box-shadow: 2px 8px 20px rgba(13, 143,254, 15%);
+  box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
  
 }
 

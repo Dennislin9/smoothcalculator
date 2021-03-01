@@ -113,7 +113,7 @@ select {
   text-align: center;
    border: none;
   position: center;
-  background: rgb(126, 126, 243);
+   background:#3DCBf8;
   
   border-radius: 4px;
    font-family: Arial, Helvetica, sans-serif;

@@ -120,7 +120,7 @@ html {
 }
 
 .select-selected {
-  background-color: DodgerBlue;
+  background-color: #0D8FFE;
 }
 
 /*style the arrow inside the select element:*/
