@@ -18,5 +18,9 @@
     "vanilla-tilt": "^1.7.0",
     "vue-currency-input": "^1.22.6"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1"
+  }
 }
