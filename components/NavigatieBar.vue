@@ -1,7 +1,7 @@
 <template>
   <h2 class="Navigatie">
     <button v-on:click="calculate" class="calculate">
-      SmoothCalculator 
+      <img src="/smoothcalc.png" alt="">
     </button>
  
     <button v-on:click="menu" class="menu">
@@ -95,7 +95,7 @@ li {
   padding: 10px;
 }
 .thrash {
-  width: 50px;
+  width: 40px;
   border: none;
   background: none;
   color: black;
@@ -104,8 +104,8 @@ li {
   top: 7px;
 }
 .menu {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border: none;
   background: none;
   color: black;
@@ -121,7 +121,10 @@ li {
   border: none;
   font-size: 100%;
   font-family: Arial, Helvetica, sans-serif;
-
+  vertical-align: top;
+}
+.calculate img {
+  width: 200px;
 }
 
 </style>

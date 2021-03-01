@@ -24,7 +24,7 @@ export default {
         display: "",
       },
       contentstyle: {
-        transform: "translateX(100%)",
+        transform: ""
       },
     };
   },
@@ -103,7 +103,7 @@ export default {
 }
 .logo {
   height: 50px;
-  width: 90%;
+  width: 300px;
   position: fixed;
   left: 20px;
   background: whitesmoke;

@@ -2,26 +2,48 @@
   <div>
     <NavigatieBar />
     <Nuxt />
-    <sidebar/>
+    <sidebar />
   </div>
 </template>
 <script>
 import Cookie from "js-cookie";
-import sidebar from '@/components/Sidebar'
+import sidebar from "@/components/Sidebar";
 export default {
   components: {
-    sidebar
+    sidebar,
   },
   mounted() {
-    this.$store.state.balancecurrency = Cookie.get("balancecurrency")
-    this.$store.state.gekozenbalance = Cookie.get("prevbalance")
-    this.$store.state.gekozenrisk = Cookie.get("prevrisk")
-    this.$store.state.gekozenpips =  Cookie.get("prevpips");
-    this.$store.state.instagramnaam = Cookie.get('previnstanaam')
+    if (typeof Cookie.get("balancecurrency") != 'undefined') {
+      this.$store.state.balancecurrency = Cookie.get("balancecurrency");
+    } else {
+       Cookie.set('balancecurrency', 'EUR')
+    }
+    if (typeof Cookie.get("prevbalance") != 'undefined') {
+      this.$store.state.gekozenbalance = Cookie.get("prevbalance");
+    } else {
+      this.$store.state.gekozenbalance = 0
+    }
+    if (typeof Cookie.get("prevrisk") != 'undefined') {
+      this.$store.state.gekozenrisk = Cookie.get("prevrisk");
+    } else {
+      // this.$store.state.gekozenrisk = 0
+       Cookie.set('prevrisk', 0)
 
-    console.log(    this.$store.state.balancecurrency = Cookie.get("balancecurrency"),
-    this.$store.state.gekozenbalance = Cookie.get("prevbalance"),
-    this.$store.state.gekozenrisk = Cookie.get("prevrisk"))
+    }
+    if (typeof Cookie.get("prevpips") != 'undefined') {
+      this.$store.state.gekozenpips = Cookie.get("prevpips");
+    } else {
+      this.$store.state.gekozenpips = 0
+    }
+    if (typeof Cookie.get("previnstanaam") != 'undefined') {
+      this.$store.state.instagramnaam = Cookie.get("previnstanaam");
+    } else {
+      this.$store.state.instagramnaam = 0
+    }
+
+    // console.log(    this.$store.state.balancecurrency = Cookie.get("balancecurrency"),
+    // this.$store.state.gekozenbalance = Cookie.get("prevbalance"),
+    // this.$store.state.gekozenrisk = Cookie.get("prevrisk"))
   },
 };
 </script>

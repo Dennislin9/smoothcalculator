@@ -22,7 +22,7 @@ export default {
 
   methods: {
     check2(e) {
-      Cookie.set("prevrisk", e.target.value);
+      Cookie.set("prevrisk", e.target.value,  { expires: 7 });
       this.$store.state.gekozenrisk = e.target.value;
     },
     check(e) {

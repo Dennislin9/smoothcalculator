@@ -18,7 +18,7 @@ export default {
   methods: {
     check2(e) {
 
-      Cookie.set('prevbalance', e.target.innerHTML.replace('.', ''))
+      Cookie.set('prevbalance', e.target.innerHTML.replace('.', ''),  { expires: 7 })
       this.$store.state.gekozenbalance =  e.target.innerHTML.replace('.', '')
      
     },
