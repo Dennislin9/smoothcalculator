@@ -134,7 +134,19 @@ export default {
   font-weight: bolder;
   color: white;
 }
-input[type="number"],
+input[type="number"] {
+    width: 100%;
+  padding: 12px 20px;
+  height: 48px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 7px;
+  box-shadow: 2px 8px 20px rgba(13, 143,254,.15)
+}
 select {
   width: 100%;
   padding: 12px 20px;
