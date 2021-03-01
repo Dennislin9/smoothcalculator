@@ -67,7 +67,6 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Poppins' !important;
   
 
 }

@@ -2,7 +2,7 @@
   <div class="sidebar" :style="sidebarstyle">
     <div class="content" :style="contentstyle">
       <button v-on:click="logo" class="logo">
-        <img src="/smoothpips.png" alt="" />
+        <img src="/logo.png" alt="" />
  </button>
         <Instagram />
         <Linkin />
