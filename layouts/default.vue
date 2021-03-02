@@ -103,6 +103,29 @@ html {
   font-weight:500;
   font-size: 18px;
 }
+.vs__selected {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.vs__dropdown-toggle {
+  border: none !important;
+  height: 100%;
+}
+input {
+  padding-left: 20px;
+  font-size: 18px;
+
+}
+.shadow-element {
+  height: 50px;
+  border-radius: 10px;
+  width: calc(100% - 0px);
+  border: none;
+  outline: none;
+  box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
+  margin-bottom: 30px;
+}
 .button svg {
   height: 70%;
   margin-right: 10px;

@@ -6,18 +6,18 @@
         {{ fiat.naam }}
       </option>
     </select> -->
-      <v-select label="naam" :options="currency" v-model="$store.state.balancecurrency"  @input="onchange"></v-select>
+      <v-select  class="shadow-element" label="naam" :options="currency" v-model="$store.state.balancecurrency"  @input="onchange"></v-select>
     <h2>Account Balance</h2>
     
     <!-- {{$store.state.balancecurrency}} -->
     <!-- {{chosencurrency}} -->
-    <Currencyinput class="custominput" :currency="chosencurrency" />
+    <Currencyinput class="shadow-element" :currency="chosencurrency" />
 
     <h2>Risk</h2>
-    <Procent class="  " :risk="chosenrisk" />
+    <Procent class="shadow-element" :risk="chosenrisk" />
 
     <h2>Stop loss in pips:</h2>
-    <Pips class="pipsinput"/>
+    <Pips class="shadow-element" />
 
     <button v-on:click="volgende(index)" class="button">
       <p>Select currency pair</p>
@@ -139,19 +139,7 @@ export default {
   font-weight: bolder;
   color: white;
 }
-input[type="number"] {
-    width: 100%;
-  padding: 12px 20px;
-  height: 48px;
-  margin: 8px 0;
-  display: inline-block;
-  border: none;
-  border-radius: 4px;
-  border-radius: 10px;
-  box-sizing: border-box;
-  margin-top: 7px;
-  box-shadow: 2px 8px 20px rgba(13, 143,254,.15)
-}
+
 select {
   width: 100%;
   padding: 12px 20px;
