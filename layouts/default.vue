@@ -123,6 +123,7 @@ input {
   width: calc(100% - 0px);
   border: none;
   outline: none;
+  -webkit-appearance: none;
   box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
   margin-bottom: 30px;
 }
