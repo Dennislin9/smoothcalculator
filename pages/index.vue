@@ -1,20 +1,23 @@
 <template>
   <div class="container">
     <h2>Select Currency</h2>
-    <select class="custominput balancecurrency" @change="onchange">
+    <!-- <select class="custominput balancecurrency" @change="onchange">
       <option v-for="(fiat, index) in currency" :key="index" :value="fiat.naam">
         {{ fiat.naam }}
       </option>
-    </select>
+    </select> -->
+      <v-select label="naam" :options="currency" v-model="$store.state.balancecurrency"  @input="onchange"></v-select>
     <h2>Account Balance</h2>
-    <!-- {{JSON.stringify(chosencurrency)}} -->
+    
+    <!-- {{$store.state.balancecurrency}} -->
+    <!-- {{chosencurrency}} -->
     <Currencyinput class="custominput" :currency="chosencurrency" />
 
     <h2>Risk</h2>
     <Procent class="  " :risk="chosenrisk" />
 
     <h2>Stop loss in pips:</h2>
-    <Pips />
+    <Pips class="pipsinput"/>
 
     <button v-on:click="volgende(index)" class="button">
       <p>Select currency pair</p>
@@ -41,7 +44,11 @@ import Procent from "../components/Procent.vue";
 import Pips from "../components/Pips.vue";
 export default {
   components: { Procent },
-
+  data() {
+    return {
+      selected: 'EUR'
+    }
+  },
   computed: {
     currency() {
       return this.$store.state.valuta;
@@ -61,24 +68,22 @@ export default {
       );
     },
   },
-  mounted() {
-    let lol = this.$store.state.valuta.find(
-      (e) => e.naam == this.$store.state.balancecurrency
-    );
 
-    console.log(lol.currency);
+  mounted() {
+
 
     console.log(this.$store.state.balancecurrency);
     // console.log(this.$store.state.valuta.find(e => e.naam ==  this.$store.state.balancecurrency))
-    document.querySelector(".balancecurrency").value = Cookie.get(
-      "balancecurrency"
-    );
+    // document.querySelector(".balancecurrency").value = Cookie.get(
+    //   "balancecurrency"
+    // );
     console.log(Cookie.get("balancecurrency"));
   },
   methods: {
-    onchange(event) {
-      Cookie.set("balancecurrency", event.target.value, { expires: 7 });
-      this.$store.state.balancecurrency = event.target.value;
+    onchange(value) {
+      console.log(value)
+      Cookie.set("balancecurrency", value.naam, { expires: 7 });
+      this.$store.state.balancecurrency =value.naam;
     },
     volgende() {
       this.$router.push("/currency");
@@ -169,6 +174,15 @@ select {
   border: none;
   box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
  
+}
+.pipsinput{
+  margin-bottom: 30px;
+  border-radius: 10px;
+  margin-top: 7px;
+  border: none;
+  box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
+  
+
 }
 
 

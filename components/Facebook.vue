@@ -21,13 +21,13 @@ methods:{
 input,
 .facebook {
   width: 50px;
-  height: 50px;
+  height: 80px;
   border: none;
   background: none;
   color: black;
 
   position: absolute;
-  left: 20%;
+  left: 17%;
   bottom: 80px;
 }
 .facebook img {

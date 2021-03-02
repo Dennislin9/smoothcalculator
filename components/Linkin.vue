@@ -1,7 +1,7 @@
 <template>
   <div class="">
     <button v-on:click="linkin" class="linkin">
-      <img src="/linkedin.png" alt="" />
+      <img src="/link.png" alt="" />
     </button>
   </div>
 </template>
@@ -21,13 +21,13 @@ methods:{
 input,
 .linkin {
   width: 50px;
-  height: 50px;
+  height: 80px;
   border: none;
   background: none;
   color: black;
 
   position: absolute;
-  left: 60%;
+  left: 63%;
   bottom: 80px;
 }
 .linkin img {

@@ -128,7 +128,7 @@ select {
 }
 .instagram {
   width: 50px;
-   height: 50px;
+   height: 80px;
   border: none;
   background: none;
   color: black;
