@@ -112,6 +112,7 @@ body {
   width: 90%;
   height: 40px;
   border: none;
+  margin-bottom: 30px;
   position: absolute;
   margin-top: 20px;
 }

@@ -2,7 +2,8 @@
   <div>
     <NavigatieBar />
     <Nuxt />
-    <sidebar />
+    <Tabs />
+    <Sidebar />
   </div>
 </template>
 <script>
@@ -100,7 +101,7 @@ html {
 
   flex: 1;
   line-height: 40px;
-  font-weight:500;
+  font-weight:500px;
   font-size: 18px;
 }
 .vs__selected {

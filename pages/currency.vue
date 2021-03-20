@@ -101,7 +101,7 @@ export default {
   height: 40px;
   border: none;
   text-align: right;
-  
+  margin-bottom: 30px;
   padding-right: 40px;
   position: fixed;
   left: 25%;
@@ -110,6 +110,7 @@ export default {
 .next {
   right: 30px;
   padding-left: 20px;
+  margin-bottom: 30px;
   left: auto;
   text-align: left;
   transform: translateX(0);
@@ -125,6 +126,7 @@ export default {
   margin-left: 10px;
   position: absolute;
   left: 0px;
+  
 }
 .wrp {
   min-height: 300px;

@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+     <tabs />
     <h2>Select Currency</h2>
     <!-- <select class="custominput balancecurrency" @change="onchange">
       <option v-for="(fiat, index) in currency" :key="index" :value="fiat.naam">
@@ -172,7 +173,13 @@ select {
   
 
 }
-
+.button {
+  width: 90%;
+  height: 40px;
+  border: none;
+  margin-bottom: 30px;
+  position: absolute;
+}
 
 
 </style>
