@@ -5,7 +5,7 @@
       class="input currencyinput"
       contenteditable="true"
       @keyup="check2"
-      placeholder="voer tekst in"
+      placeholder="enter text"
     >
     </div>
   </div>

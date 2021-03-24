@@ -2,16 +2,11 @@
   <div class="container">
      <tabs />
     <h2>Select Currency</h2>
-    <!-- <select class="custominput balancecurrency" @change="onchange">
-      <option v-for="(fiat, index) in currency" :key="index" :value="fiat.naam">
-        {{ fiat.naam }}
-      </option>
-    </select> -->
+
       <v-select  class="shadow-element" label="naam" :options="currency" v-model="$store.state.balancecurrency"  @input="onchange"></v-select>
     <h2>Account Balance</h2>
     
-    <!-- {{$store.state.balancecurrency}} -->
-    <!-- {{chosencurrency}} -->
+
     <Currencyinput class="shadow-element" :currency="chosencurrency" />
 
     <h2>Risk</h2>
