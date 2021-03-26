@@ -10,16 +10,18 @@
     <Currencyinput class="shadow-element" :currency="chosencurrency" />
 
     <h2>Daily Interest Rate</h2>
-    <Dailyrate class="shadow-element" :display="drr" />
+    <Dailyrate class="shadow-element"  />
+<!-- :display="drr" -->
 
 <h2>Daily Reinvest Rate</h2>
-    <v-select
+    <!-- <v-select
       class="shadow-element"
       label="value"
       :options="reinvestrate"
       v-model="$store.state.drr"
       @input="onchange"
-    ></v-select>
+    ></v-select> -->
+    <DRR class="shadow-element" />
 
     <h2>Length of Term (in days)</h2>
     <Lengthday class="shadow-element" />
@@ -50,7 +52,6 @@
 import AutoNumeric from "autonumeric";
 import Cookie from "js-cookie";
 import Procent from "../components/Procent.vue";
-import Pips from "../components/Pips.vue";
 export default {
   components: { Procent },
   data() {
@@ -72,15 +73,8 @@ export default {
     chosenbalance() {
       return this.$store.state.gekozenbalance;
     },
-    drr() {
-      return this.$store.state.drr;
-    },
-    chosenpips() {
-      return this.$store.state.gekozenpips;
-    },
-    weekend() {
-      return this.$store.state.weekend;
-    },
+
+   
     chosencurrency() {
       return this.$store.state.valuta.find(
         (e) => e.naam == this.$store.state.balancecurrency
@@ -91,9 +85,6 @@ export default {
   mounted() {
     console.log(this.$store.state.balancecurrency);
     console.log(Cookie.get("balancecurrency"));
-
-    console.log(this.$store.state.balanceweekend);
-    console.log(Cookie.get("balanceweekend"));
   },
   methods: {
     onchange(value) {

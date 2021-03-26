@@ -100,7 +100,7 @@ export const actions = {
 
                 } else {
                     state.rate = response.data.rates[input]
-                    console.log('asdasdasds')
+                    console.log('api werkt ')
                     console.log(state.rate)
                 }
             })
