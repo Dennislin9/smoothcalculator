@@ -9,16 +9,14 @@ export const state = () => ({
      */
     // risk management
     balancecurrency: 'EUR',
-    gekozenvaluta: [],
     gekozenrisk: 0,
     gekozenpips: 0,
     gekozenbalance: 0,
+    gekozenvaluta: [],
     // compounding
     dailyinterestrate: 0,
     drr:0,
     days:0,
-    
-
     valuta: [
         {
             currency: '&#8371;',

@@ -17,7 +17,7 @@ export default {
   methods: {
     check2(e) {
       console.log("check");
-      // Cookie.set("drr", value, { expires: 7 });
+      Cookie.set("drr", value, { expires: 7 });
       this.$store.state.DRR = e.target.value;
     }   
   },

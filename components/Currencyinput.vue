@@ -41,10 +41,13 @@ export default {
     console.log(Cookie.get('prevbalance'))
     document.querySelector('.currencyinput').innerHTML = Cookie.get('prevbalance')
     
+
+    
     const autoNumericOptionsEuro = {
       digitGroupSeparator: ".",
       decimalCharacter: ",",
       decimalCharacterAlternative: ".",
+      
 
       currencySymbolPlacement:
         AutoNumeric.options.currencySymbolPlacement.suffix,
@@ -53,7 +56,7 @@ export default {
 
     // Initialization
     new AutoNumeric(".currencyinput", autoNumericOptionsEuro);
-  },
+   },
 };
 </script>
 <style scoped>

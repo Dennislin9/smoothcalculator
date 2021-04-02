@@ -4,7 +4,7 @@
       <img src="/logo.png" alt="">
     </button>
  
-    <button v-on:click="menu" class="menu">
+    <!-- <button v-on:click="menu" class="menu">
       <svg
         class="w-6 h-6"
         fill="currentColor"
@@ -17,7 +17,7 @@
           clip-rule="evenodd"
         ></path>
       </svg>
-    </button>
+    </button> -->
     <button v-on:click="thrash(index)" class="thrash">
       <svg
         class="w-6 h-6"

@@ -29,7 +29,7 @@
     
 
 
-    <Customswitch/>
+    <!-- <Customswitch/> -->
     <button v-on:click="volgende(index)" class="button">
       <p>Calculate</p>
       <svg
@@ -173,8 +173,10 @@ select {
   box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
 .button {
-  width: 350px;
+  width: 90%;
   height: 40px;
   border: none;
-  }
+  margin-bottom: 50px;
+  position: fixed;
+}
 </style>
