@@ -96,10 +96,11 @@ export default {
   font-weight: bold;
   color: #0d8ffe;
   font-size: 20px;
+  
 }
 .titles .title {
   flex: 1;
-  text-align: center;
+  text-align: left;
   line-height: 30px;
 }
 .results {
@@ -112,11 +113,11 @@ export default {
 .titles {
   height: 50px;
   width: 100%;
-  background: green;
+  
   margin-top: 40px;
 }
 ul {
-  background: purple;
+ 
   padding: 0;
   margin: 0;
   max-height: 500px;
@@ -127,7 +128,7 @@ li {
 }
  li * {
    flex: 1;
-   background: yellow;
+   
    height: 40px;
    margin-bottom: 20px;
    display: flex;

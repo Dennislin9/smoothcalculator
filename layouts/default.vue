@@ -69,8 +69,8 @@ export default {
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 html {
-  font-size: 16px;
-  word-spacing: 1px;
+  font-size: 13px;
+  // word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -112,12 +112,15 @@ html {
   margin: 0 auto;
   margin-top: 50px;
   border-radius: 10px;
+  box-shadow: 2px 8px 20px rgba(13, 143,254,.15)
 }
 .button p {
   flex: 1;
   line-height: 40px;
   font-weight: 500px;
-  font-size: 18px;
+  font-size: 15px;
+  font-weight: bold;
+  
   
 }
 .vs__selected {
@@ -131,7 +134,7 @@ html {
 }
 input {
   padding-left: 20px;
-  font-size: 18px;
+  
 }
 .shadow-element {
   height: 50px;
@@ -206,7 +209,13 @@ input {
 .select-hide {
   display: none;
 }
-
+.kop{
+  color: #0d8ffe;
+  font-family: "Poppins";
+  font-weight:bold ;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
 .select-items div:hover,
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);

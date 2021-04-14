@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <Tabs />
-
+<div class="kop">
+      Compounding
+    </div>
 
     <h2>Initial Purchase Amount</h2>
 

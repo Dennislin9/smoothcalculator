@@ -162,7 +162,7 @@ export default {
   background: none;
 }
 .kop1{
-  margin-left: 25px;
+  margin-left: 35px;
   margin-bottom: 10px;
   font-size: 12px;
     word-spacing: 1px;

@@ -58,7 +58,7 @@ export default {
   border-radius: 10px;
   background:#3DCBf8;
   color:white;
-  
+  font-weight:bold ;
   font-size: 30px;
   text-align: center;
   

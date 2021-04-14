@@ -1,7 +1,7 @@
 <template>
     <v-select
       class="shadow-element"
-      label="value"
+      label="display"
       id="DRR"
       :options="reinvestrate"
       v-model="$store.state.drr"

@@ -84,12 +84,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tabs {
-  height: 100px;
+  height: 50px;
   z-index: 9999;
   width: 100%;
   // max-width: 500px;
   display: flex;
-  background: #ffffffcc;
+  background: black;
   backdrop-filter: blur(15px);
   box-sizing: border-box;
   position: fixed;
@@ -97,8 +97,9 @@ export default {
   button {
     flex: 1;
     background: none;
+    color: white;
     outline: none;
-    padding-bottom: 20px;
+    
     border: none;
     text-align: center;
     svg {
@@ -106,14 +107,7 @@ export default {
       margin: 0 auto;
     }
   }
-  &.profile {
-    background: #f8dd44cc;
-  }
-  &.scanner {
-    background: none !important;
-    backdrop-filter: none;
-    filter: invert(100%);
-  }
+  
 }
 @media screen and (max-width: 322px) {
   .tabs {
