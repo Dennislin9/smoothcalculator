@@ -165,6 +165,7 @@ select {
   border-radius: 10px;
   margin-top: 7px;
   border: none;
+  font-size: 16px;
   box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
 .pipsinput {
@@ -172,6 +173,7 @@ select {
   border-radius: 10px;
   margin-top: 7px;
   border: none;
+  font-size: 16px;
   box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
 .button {
