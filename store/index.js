@@ -7,13 +7,16 @@ export const state = () => ({
      * -b504969feab88deff82d096da3520d75
      * https://data.fixer.io/api/latest?access_key=API_KEY&base=USD
      */
-    showmenu: 'closed',
+    // risk management
     balancecurrency: 'EUR',
-    gekozenvaluta: [],
-    gekozenbalance: 0,
     gekozenrisk: 0,
     gekozenpips: 0,
-    rate: 0,
+    gekozenbalance: 0,
+    gekozenvaluta: [],
+    // compounding
+    dailyinterestrate: 0,
+    drr:0,
+    days:0,
     valuta: [
         {
             currency: '&#8371;',
@@ -95,7 +98,7 @@ export const actions = {
 
                 } else {
                     state.rate = response.data.rates[input]
-                    console.log('asdasdasds')
+                    console.log('api werkt ')
                     console.log(state.rate)
                 }
             })

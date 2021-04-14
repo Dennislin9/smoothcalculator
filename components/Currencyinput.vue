@@ -5,7 +5,7 @@
       class="input currencyinput"
       contenteditable="true"
       @keyup="check2"
-      placeholder="voer tekst in"
+      placeholder="enter text"
     >
     </div>
   </div>
@@ -41,10 +41,13 @@ export default {
     console.log(Cookie.get('prevbalance'))
     document.querySelector('.currencyinput').innerHTML = Cookie.get('prevbalance')
     
+
+    
     const autoNumericOptionsEuro = {
       digitGroupSeparator: ".",
       decimalCharacter: ",",
       decimalCharacterAlternative: ".",
+      
 
       currencySymbolPlacement:
         AutoNumeric.options.currencySymbolPlacement.suffix,
@@ -53,7 +56,7 @@ export default {
 
     // Initialization
     new AutoNumeric(".currencyinput", autoNumericOptionsEuro);
-  },
+   },
 };
 </script>
 <style scoped>

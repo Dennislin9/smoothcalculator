@@ -1,22 +1,37 @@
 <template>
   <div class="container">
-     <tabs />
-    <h2>Select Currency</h2>
+    <Tabs />
 
-      <v-select  class="shadow-element" label="naam" :options="currency" v-model="$store.state.balancecurrency"  @input="onchange"></v-select>
-    <h2>Account Balance</h2>
-    
 
+    <h2>Initial Purchase Amount</h2>
+
+    <!-- {{$store.state.balancecurrency}} -->
+    <!-- {{chosencurrency}} -->
     <Currencyinput class="shadow-element" :currency="chosencurrency" />
 
-    <h2>Risk</h2>
-    <Procent class="shadow-element" :risk="chosenrisk" />
+    <h2>Daily Interest Rate</h2>
+    <Dailyrate class="shadow-element"  />
+<!-- :display="drr" -->
 
-    <h2>Stop loss in pips:</h2>
-    <Pips class="shadow-element" />
+<h2>Daily Reinvest Rate</h2>
+    <!-- <v-select
+      class="shadow-element"
+      label="value"
+      :options="reinvestrate"
+      v-model="$store.state.drr"
+      @input="onchange"
+    ></v-select> -->
+    <DRR class="shadow-element" />
 
+    <h2>Length of Term (in days)</h2>
+    <Lengthday class="shadow-element" />
+
+    
+
+
+    <!-- <Customswitch/> -->
     <button v-on:click="volgende(index)" class="button">
-      <p>Select currency pair</p>
+      <p>Calculate</p>
       <svg
         class="w-6 h-6"
         fill="currentColor"
@@ -37,27 +52,29 @@
 import AutoNumeric from "autonumeric";
 import Cookie from "js-cookie";
 import Procent from "../components/Procent.vue";
-import Pips from "../components/Pips.vue";
 export default {
   components: { Procent },
   data() {
     return {
-      selected: 'EUR'
-    }
+      selected: "EUR",
+    };
   },
   computed: {
-    currency() {
-      return this.$store.state.valuta;
+    reinvestrate() {
+      let arr = []
+      for(let i = 1; i <= 10; i++) {
+        arr.push({
+          value: i/ 10,
+          display: i * 10 + '%'
+        })
+      }
+      return arr
     },
     chosenbalance() {
       return this.$store.state.gekozenbalance;
     },
-    chosenrisk() {
-      return this.$store.state.gekozenrisk;
-    },
-    chosenpips() {
-      return this.$store.state.gekozenpips;
-    },
+
+   
     chosencurrency() {
       return this.$store.state.valuta.find(
         (e) => e.naam == this.$store.state.balancecurrency
@@ -66,24 +83,19 @@ export default {
   },
 
   mounted() {
-
-
     console.log(this.$store.state.balancecurrency);
-    // console.log(this.$store.state.valuta.find(e => e.naam ==  this.$store.state.balancecurrency))
-    // document.querySelector(".balancecurrency").value = Cookie.get(
-    //   "balancecurrency"
-    // );
     console.log(Cookie.get("balancecurrency"));
   },
   methods: {
     onchange(value) {
-      console.log(value)
-      Cookie.set("balancecurrency", value.naam, { expires: 7 });
-      this.$store.state.balancecurrency =value.naam;
+      console.log(value);
+      Cookie.set("drr", value, { expires: 7 });
+      this.$store.state.drr = value;
     },
-    volgende() {
-      this.$router.push("/currency");
+     volgende() {
+      this.$router.push("/compoundcalc");
     },
+
   },
 };
 </script>
@@ -92,19 +104,20 @@ export default {
 
 <style scoped>
 .labBalance {
-  
-  height: 40px; 
+  height: 40px;
   width: 50px;
-  color:black;
+  color: black;
   font-size: 200%;
   background: none;
   width: 100%;
   border: none;
-  margin-top: 50px;
-  font-family: 'Roboto', sans-serif;
-  
-  
+  margin-top: 40px;
+  font-family: "Roboto", sans-serif;
 }
+/* .custom-control{
+  float: left;
+  margin-right: 90px;
+} */
 .risk {
   height: 40px;
   width: 40px;
@@ -112,10 +125,8 @@ export default {
   font-size: 200%;
   background: none;
   display: block;
-  margin-top: 50px;
+  margin-top: 40px;
   border-radius: 10px;
-  
- 
 }
 .pips {
   /* min-height: 780px; */
@@ -125,13 +136,10 @@ export default {
   background: none;
   width: 100%;
   display: block;
-  margin-top: 50px;
+  margin-top: 40px;
   border-radius: 10px;
-  
- 
- 
 }
-.balancecurrency{
+.balancecurrency {
   font-weight: bolder;
   color: white;
 }
@@ -147,26 +155,22 @@ select {
   border-radius: 10px;
   box-sizing: border-box;
   margin-top: 7px;
-  box-shadow: 2px 8px 20px rgba(13, 143,254,.15)
-
+  box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
 .custominput {
   margin-bottom: 30px;
-  background:#3DCBf8;
+  background: #3dcbf8;
   border-radius: 10px;
   margin-top: 7px;
   border: none;
-  box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
- 
+  box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
-.pipsinput{
+.pipsinput {
   margin-bottom: 30px;
   border-radius: 10px;
   margin-top: 7px;
   border: none;
-  box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
-  
-
+  box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
 .button {
   width: 90%;
@@ -175,6 +179,4 @@ select {
   margin-bottom: 50px;
   position: fixed;
 }
-
-
 </style>

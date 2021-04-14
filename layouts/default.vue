@@ -2,7 +2,8 @@
   <div>
     <NavigatieBar />
     <Nuxt />
-    <sidebar />
+    <Tabs />
+    <Sidebar />
   </div>
 </template>
 <script>
@@ -13,42 +14,58 @@ export default {
     sidebar,
   },
   mounted() {
-    if (typeof Cookie.get("balancecurrency") != 'undefined') {
+    
+    if (typeof Cookie.get("balancecurrency") != "undefined") {
       this.$store.state.balancecurrency = Cookie.get("balancecurrency");
     } else {
-       Cookie.set('balancecurrency', 'EUR')
+      Cookie.set("balancecurrency", "EUR");
     }
-    if (typeof Cookie.get("prevbalance") != 'undefined') {
+    if (typeof Cookie.get("prevbalance") != "undefined") {
       this.$store.state.gekozenbalance = Cookie.get("prevbalance");
     } else {
-      this.$store.state.gekozenbalance = 0
+      this.$store.state.gekozenbalance = 0;
     }
-    if (typeof Cookie.get("prevrisk") != 'undefined') {
+    if (typeof Cookie.get("prevrisk") != "undefined") {
       this.$store.state.gekozenrisk = Cookie.get("prevrisk");
     } else {
       // this.$store.state.gekozenrisk = 0
-       Cookie.set('prevrisk', 0)
-
+      Cookie.set("prevrisk", 0);
     }
-    if (typeof Cookie.get("prevpips") != 'undefined') {
+    if (typeof Cookie.get("prevpips") != "undefined") {
       this.$store.state.gekozenpips = Cookie.get("prevpips");
     } else {
-      this.$store.state.gekozenpips = 0
+      this.$store.state.gekozenpips = 0;
     }
-    if (typeof Cookie.get("previnstanaam") != 'undefined') {
+    if (typeof Cookie.get("previnstanaam") != "undefined") {
       this.$store.state.instagramnaam = Cookie.get("previnstanaam");
     } else {
-      this.$store.state.instagramnaam = 0
+      this.$store.state.instagramnaam = 0;
     }
-
+    // compounding
+    if (typeof Cookie.get("days") != "undefined") {
+      this.$store.state.days = Cookie.get("days");
+    } else {
+      this.$store.state.days = 0;
+    }
+    if (typeof Cookie.get("dailyinterestrate") != "undefined") {
+      this.$store.state.dailyinterestrate = Cookie.get("dailyinterestrate");
+    } else {
+      this.$store.state.dailyinterestrate = 0;
+    }
+    if (typeof Cookie.get("drr") != "undefined") {
+      this.$store.state.drr = Cookie.get("drr");
+    } else {
+      this.$store.state.drr = 0;
+    }
     // console.log(    this.$store.state.balancecurrency = Cookie.get("balancecurrency"),
     // this.$store.state.gekozenbalance = Cookie.get("prevbalance"),
     // this.$store.state.gekozenrisk = Cookie.get("prevrisk"))
+    
   },
 };
 </script>
 <style lang="scss">
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 html {
   font-size: 16px;
   word-spacing: 1px;
@@ -57,9 +74,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  color:#363636;
-  font-family: 'Poppins';
-  
+  color: #363636;
+  font-family: "Poppins";
 }
 
 *,
@@ -67,14 +83,13 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
-  
-
 }
 .container {
   height: 100vh;
   width: 100vw;
   padding: 20px;
   padding-top: 120px;
+  margin-bottom: 120px;
   background: linear-gradient(10deg, white);
 }
 .button {
@@ -82,11 +97,11 @@ html {
   max-width: 430px;
   height: 48px;
   border: none;
-  position: fixed;
+  position: relative;
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
-  background-image: linear-gradient(to left,#0D8FFE,#58CAFB);
+  background-image: linear-gradient(to left, #0d8ffe, #58cafb);
   color: white;
   display: flex;
   /* justify-content: center; */
@@ -97,11 +112,11 @@ html {
   border-radius: 10px;
 }
 .button p {
-
   flex: 1;
   line-height: 40px;
-  font-weight:500;
+  font-weight: 500px;
   font-size: 18px;
+  
 }
 .vs__selected {
   display: block;
@@ -115,7 +130,6 @@ html {
 input {
   padding-left: 20px;
   font-size: 18px;
-
 }
 .shadow-element {
   height: 50px;
@@ -124,19 +138,19 @@ input {
   border: none;
   outline: none;
   -webkit-appearance: none;
-  box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
+  box-shadow: 2px 6px 8px rgba(13, 143, 254, 0.1);
   margin-bottom: 30px;
+}
+.v-select ul {
+  max-height: 200px;
 }
 .button svg {
   height: 70%;
   margin-right: 10px;
-  
-  
 }
 
 .custom-select {
   position: relative;
-
 }
 
 .custom-select select {
@@ -144,7 +158,7 @@ input {
 }
 
 .select-selected {
-  background-color: #0D8FFE;
+  background-color: #0d8ffe;
 }
 
 /*style the arrow inside the select element:*/
@@ -195,5 +209,4 @@ input {
 .same-as-selected {
   background-color: rgba(0, 0, 0, 0.1);
 }
-
 </style>
