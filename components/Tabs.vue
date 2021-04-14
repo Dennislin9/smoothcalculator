@@ -84,7 +84,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tabs {
-  height: 50px;
+  height: 60px;
   z-index: 9999;
   width: 100%;
   // max-width: 500px;

@@ -18,7 +18,7 @@
     <h2>Stop loss in pips:</h2>
     <Pips class="shadow-element" />
 
-    <button v-on:click="volgende(index)" class="button">
+    <button v-on:click="verzenden(index)" class="button">
       <p>Select currency pair</p>
       <svg
         class="w-6 h-6"
@@ -79,6 +79,15 @@ export default {
     console.log(Cookie.get("balancecurrency"));
   },
   methods: {
+    verzenden() {
+
+      if (this.chosenbalance && this.chosenrisk == '') {
+        alert("empty");
+      } else {
+        this.volgende()
+        
+      }
+    },
     onchange(value) {
       console.log(value)
       Cookie.set("balancecurrency", value.naam, { expires: 7 });

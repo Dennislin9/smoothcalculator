@@ -32,7 +32,7 @@
 
 
     <!-- <Customswitch/> -->
-    <button v-on:click="volgende(index)" class="button">
+    <button v-on:click="verzenden(index)" class="button">
       <p>Calculate</p>
       <svg
         class="w-6 h-6"
@@ -93,6 +93,15 @@ export default {
       console.log(value);
       Cookie.set("drr", value, { expires: 7 });
       this.$store.state.drr = value;
+    },
+    verzenden() {
+
+      if (this.chosenbalance == '' && this.reinvestrate == '') {
+        alert("empty");
+      } else {
+        this.volgende()
+        
+      }
     },
      volgende() {
       this.$router.push("/compoundcalc");
