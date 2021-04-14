@@ -2,16 +2,18 @@
   <div>
     <NavigatieBar />
     <Nuxt />
+    
     <Tabs />
-    <Sidebar />
   </div>
 </template>
 <script>
 import Cookie from "js-cookie";
 import sidebar from "@/components/Sidebar";
+import Tab from '../components/Tab.vue';
 export default {
   components: {
-    sidebar,
+    sidebar
+    
   },
   mounted() {
     
