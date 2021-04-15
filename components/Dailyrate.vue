@@ -6,10 +6,10 @@
       maxlength="2"
       class="input percentage"
       max="4"
-      placeholder="Dailyrate"
+      placeholder="voer tekst in"
       @keyup="check2"
       @keydown="check"
-      v-html="rate"
+      v-html="dailyinterestrate"
     />
   </div>
 </template>
@@ -18,26 +18,64 @@ import Cookie from "js-cookie";
 import AutoNumeric from "autonumeric";
 
 export default {
-  props: ["rate"],
-
+  computed: {
+    dailyinterestrate() {
+      return parseInt(this.$store.state.dailyinterestrate);
+    },
+  },
   methods: {
     check2(e) {
-      Cookie.set("dailyinterestrate", e.target.value,  { expires: 7 });
+      Cookie.set("previr", e.target.value, { expires: 7 });
       this.$store.state.dailyinterestrate = e.target.value;
     },
     check(e) {
-      if (e.key == "Backspace" || "Enter") {
-      } else if (!isNaN(e.which)) {
-        console.log('is not a number')
+  
+      if(isNaN(e.key) == false ) {
+          console.log(e.key)
 
-        e.preventDefault();
+        // if(e.key == "Backspace" || "Enter") {
+        //   alert('DONT PREVENT')
+        // } else {
+        //   alert('PREVENT')
+        // }
+      } else  if(e.key == "Backspace" || "Enter") {
+          console.log('DONT PREVENT')
       }
-    },
+      if(e.key != "Backspace"){
+          console.log('geen backspace of enter')
+           if( isNaN(e.key) == true) {
+           console.log('ABC')
+           e.preventDefault()
+           }
+        }
+      // if(isNaN(e.key) == true && e.key == "Backspace" || "Enter") {
+      //   console.log('asasdasd')
+      // } else {
+      //   console.log('prevent default')
+      //   e.target.preventDefault()
+      // }
+      // if (isNaN(e.key) == true) {
+      //   if (e.key == "Backspace" || "Enter") {
+      //   console.log('backspace or enter')
+      //   }  else {
+      //   e.preventDefault();
 
+      //   }
+      // }
+
+      // if (e.key == "Backspace" || "Enter") {
+      // } else if (!isNaN(e.which)) {
+      //   console.log('is not a number')
+
+      //   e.preventDefault();
+      // }
+    },
   },
   mounted() {
-    document.querySelector(".percentage").value = Cookie.get("dailyinterestrate");
-
+    if (typeof Cookie.get("previr") != "undefined") {
+      document.querySelector(".percentage").value = Cookie.get("previr");
+      this.$store.state.dailyinterestrate = Cookie.get("previr");
+    }
   },
 };
 </script>
@@ -56,12 +94,11 @@ export default {
 .wrap .currency {
   min-width: 60px;
   border-radius: 10px;
-  background:#3DCBf8;
-  color:white;
+  background: #3dcbf8;
+  color: white;
   font-weight: bold;
   font-size: 30px;
   text-align: center;
-  
 }
 .input[placeholder]:empty:before {
   content: attr(placeholder);

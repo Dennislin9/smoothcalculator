@@ -5,7 +5,6 @@
       id="DRR"
       :options="reinvestrate"
       v-model="$store.state.drr"
-      @input="onchange"
     ></v-select> 
 </template>
 
@@ -15,15 +14,11 @@ import Cookie from "js-cookie";
 export default {
   // props:[],
   methods: {
-    check2(e) {
-      console.log("check");
-      Cookie.set("drr", value, { expires: 7 });
-      this.$store.state.DRR = e.target.value;
-    }   
+   
   },
   mounted() {
-    
-    document.querySelector("#DRR").value = Cookie.get("DRR");
+  
+ 
   },
   computed:{
 

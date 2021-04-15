@@ -26,12 +26,21 @@ export default {
       this.$store.state.gekozenrisk = e.target.value;
     },
     check(e) {
-      if (e.key == "Backspace" || "Enter") {
-      } else if (!isNaN(e.which)) {
-        console.log('is not a number')
+   if(isNaN(e.key) == false ) {
+          console.log(e.key)
 
-        e.preventDefault();
+       
+      } else  if(e.key == "Backspace" || "Enter") {
+          console.log('DONT PREVENT')
       }
+      if(e.key != "Backspace"){
+          console.log('geen backspace of enter')
+           if( isNaN(e.key) == true) {
+           console.log('ABC')
+           e.preventDefault()
+           }
+        }
+     
     },
 
   },

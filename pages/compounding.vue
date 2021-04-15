@@ -16,13 +16,7 @@
 <!-- :display="drr" -->
 
 <h2>Daily Reinvest Rate</h2>
-    <!-- <v-select
-      class="shadow-element"
-      label="value"
-      :options="reinvestrate"
-      v-model="$store.state.drr"
-      @input="onchange"
-    ></v-select> -->
+   
     <DRR class="shadow-element" />
 
     <h2>Length of Term (in days)</h2>
@@ -53,9 +47,9 @@
 <script>
 import AutoNumeric from "autonumeric";
 import Cookie from "js-cookie";
-import Procent from "../components/Procent.vue";
+import Dailyrate from "../components/Dailyrate.vue";
 export default {
-  components: { Procent },
+  components: { Dailyrate },
   data() {
     return {
       selected: "EUR",
@@ -75,13 +69,19 @@ export default {
     chosenbalance() {
       return this.$store.state.gekozenbalance;
     },
-
-   
+ days() {
+      return this.$store.state.days;
+    },
+    dailyinterestrate() {
+      return parseInt(this.$store.state.dailyinterestrate);
+    },
     chosencurrency() {
       return this.$store.state.valuta.find(
         (e) => e.naam == this.$store.state.balancecurrency
       );
     },
+  
+    // 
   },
 
   mounted() {
@@ -95,15 +95,19 @@ export default {
       this.$store.state.drr = value;
     },
     verzenden() {
-      // let chosenbalance = this.value.drr
-      let chosencurrency = this.chosencurrency
-      let Dailyrate     = this.Dailyrate
-      let Lengthday     = this.Lengthday
+      
+      let chosenbalance     = this.chosenbalance
+      let days              = this.days
+      let dailyinterestrate = this.dailyinterestrate
 
-      if (( chosencurrency && Dailyrate && Lengthday ) == '' ) {
+
+      
+      if ((  chosenbalance && days && dailyinterestrate) ==''){
         alert("empty");
+
       } else {
         this.volgende()
+        console.log( "het werkt" + days +  " het werkt2" + reinvestrate  )
         
       }
     },

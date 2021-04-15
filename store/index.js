@@ -15,8 +15,11 @@ export const state = () => ({
     gekozenvaluta: [],
     // compounding
     dailyinterestrate: 0,
-    drr:0,
-    days:0,
+    drr: {
+        value: 1,
+        display: '100%'
+    },
+    days: 0,
     valuta: [
         {
             currency: '&#8371;',

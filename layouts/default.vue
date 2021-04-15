@@ -49,15 +49,17 @@ export default {
     } else {
       this.$store.state.days = 0;
     }
-    if (typeof Cookie.get("dailyinterestrate") != "undefined") {
-      this.$store.state.dailyinterestrate = Cookie.get("dailyinterestrate");
-    } else {
-      this.$store.state.dailyinterestrate = 0;
-    }
+    // if (typeof Cookie.get("dailyinterestrate") != "undefined") {
+    //   alert('asdsad')
+     
+    // //  this.$store.state.dailyinterestrate = Cookie.get("dailyinterestrate");
+    // } else {
+    //   this.$store.state.dailyinterestrate = 0;
+    // }
     if (typeof Cookie.get("drr") != "undefined") {
       this.$store.state.drr = Cookie.get("drr");
     } else {
-      this.$store.state.drr = 0;
+      // this.$store.state.drr = 0;
     }
     // console.log(    this.$store.state.balancecurrency = Cookie.get("balancecurrency"),
     // this.$store.state.gekozenbalance = Cookie.get("prevbalance"),
