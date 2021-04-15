@@ -240,18 +240,21 @@ select {
   margin-left: 40px;
    .inputjoin {
     max-width: 300px;
-    border-radius: 10px;
     margin: 0 auto;
     margin-top: 10px;
     margin-left: -10px;
-    width: 100%;
     height: 40px;
-    border: none;
     position: relative;
-    box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
     display: block;
     font-size: 15px;
     margin-bottom: 30px;
+
+    border-radius: 10px;
+    width: calc(100% - 0px);
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    box-shadow: 2px 6px 8px rgb(13 143 254 / 10%);
       
 }
 
