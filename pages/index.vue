@@ -80,8 +80,9 @@ export default {
   },
   methods: {
     verzenden() {
-
-      if (this.chosenbalance && this.chosenrisk == '') {
+        let chosenbalance = this.chosenbalance
+        let chosenrisk = this.chosenrisk
+        if ((chosenbalance && chosenrisk) ==''){
         alert("empty");
       } else {
         this.volgende()

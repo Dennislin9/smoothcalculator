@@ -95,8 +95,12 @@ export default {
       this.$store.state.drr = value;
     },
     verzenden() {
+      // let chosenbalance = this.value.drr
+      let chosencurrency = this.chosencurrency
+      let Dailyrate     = this.Dailyrate
+      let Lengthday     = this.Lengthday
 
-      if (this.chosenbalance == '' && this.reinvestrate == '') {
+      if (( chosencurrency && Dailyrate && Lengthday ) == '' ) {
         alert("empty");
       } else {
         this.volgende()

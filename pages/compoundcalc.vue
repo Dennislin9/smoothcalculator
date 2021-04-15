@@ -25,6 +25,7 @@ export default {
       return parseInt(this.$store.state.gekozenbalance);
     },
     drr() {
+      //hier gaat het mis!!!!
       return (
         Math.round((this.$store.state.drr.value + Number.EPSILON) * 100) / 100
       );
