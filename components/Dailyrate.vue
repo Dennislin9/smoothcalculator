@@ -33,11 +33,7 @@ export default {
       if(isNaN(e.key) == false ) {
           console.log(e.key)
 
-        // if(e.key == "Backspace" || "Enter") {
-        //   alert('DONT PREVENT')
-        // } else {
-        //   alert('PREVENT')
-        // }
+       
       } else  if(e.key == "Backspace" || "Enter") {
           console.log('DONT PREVENT')
       }
@@ -48,27 +44,7 @@ export default {
            e.preventDefault()
            }
         }
-      // if(isNaN(e.key) == true && e.key == "Backspace" || "Enter") {
-      //   console.log('asasdasd')
-      // } else {
-      //   console.log('prevent default')
-      //   e.target.preventDefault()
-      // }
-      // if (isNaN(e.key) == true) {
-      //   if (e.key == "Backspace" || "Enter") {
-      //   console.log('backspace or enter')
-      //   }  else {
-      //   e.preventDefault();
-
-      //   }
-      // }
-
-      // if (e.key == "Backspace" || "Enter") {
-      // } else if (!isNaN(e.which)) {
-      //   console.log('is not a number')
-
-      //   e.preventDefault();
-      // }
+     
     },
   },
   mounted() {

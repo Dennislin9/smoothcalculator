@@ -7,17 +7,18 @@
     </div>
     <ul>
       <li v-for="(result, index) in calculate" :key="index">
-          <div class="results">
-            <div class="result day">{{ result.day }}</div>
-            <div class="result earning">{{ result.money }}</div>
-            <div class="result total">{{ result.total }}</div>
-          </div>
+        <div class="results">
+          <div class="result day">{{ result.day }}</div>
+          <div :class="`result earning earning${index}`">{{ result.money }}</div>
+          <div :class="`result total total${index}`">{{ result.total }}</div>
+        </div>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import AutoNumeric from "autonumeric";
 import Cookie from "js-cookie";
 export default {
   computed: {
@@ -77,7 +78,21 @@ export default {
     },
   },
   mounted() {
-    for (let i = 0; i < 10; i++) {}
+    const autoNumericOptionsEuro = {
+      digitGroupSeparator: ".",
+      decimalCharacter: ",",
+      decimalCharacterAlternative: ".",
+
+      currencySymbolPlacement:
+        AutoNumeric.options.currencySymbolPlacement.suffix,
+      roundingMethod: AutoNumeric.options.roundingMethod.halfUpSymmetric,
+    };
+    let days = this.days;
+    // Initialization;
+    for (let i = 0; i < days; i++) {
+    new AutoNumeric(".earning"+ i, autoNumericOptionsEuro);
+    new AutoNumeric(".total" + i , autoNumericOptionsEuro);
+     }
   },
   methods: {
     back() {
@@ -89,7 +104,7 @@ export default {
 
 <style scoped>
 .container {
-  height: a
+  height: a;
 }
 .titles {
   display: flex;
@@ -97,7 +112,6 @@ export default {
   font-weight: bold;
   color: #0d8ffe;
   font-size: 20px;
-  
 }
 .titles .title {
   flex: 1;
@@ -114,11 +128,10 @@ export default {
 .titles {
   height: 50px;
   width: 100%;
-  
+
   margin-top: 40px;
 }
 ul {
- 
   padding: 0;
   margin: 0;
   max-height: 500px;
@@ -127,14 +140,13 @@ ul {
 li {
   display: flex;
 }
- li * {
-   flex: 1;
-   
-   height: 40px;
-   margin-bottom: 20px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+li * {
+  flex: 1;
 
- }
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>

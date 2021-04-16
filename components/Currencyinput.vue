@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import AutoNumeric from "autonumeric";
+// import AutoNumeric from "autonumeric";
 import Cookie from 'js-cookie'
 export default {
   props: ["currency"],
@@ -22,12 +22,7 @@ export default {
       this.$store.state.gekozenbalance =  e.target.innerHTML.replace('.', '')
      
     },
-    // check(e) {
-    //   if (e.key == "Backspace" || "Enter") {
-    //   } else if (isNaN(String.fromCharCode(e.which))) {
-    //     e.preventDefault();
-    //   }
-    // },
+    
     gekozenbalance() {
       return this.$store.state.gekozenbalance;
     },
@@ -43,19 +38,19 @@ export default {
     
 
     
-    const autoNumericOptionsEuro = {
-      digitGroupSeparator: ".",
-      decimalCharacter: ",",
-      decimalCharacterAlternative: ".",
+    // const autoNumericOptionsEuro = {
+    //   digitGroupSeparator: ".",
+    //   decimalCharacter: ",",
+    //   decimalCharacterAlternative: ".",
       
 
-      currencySymbolPlacement:
-        AutoNumeric.options.currencySymbolPlacement.suffix,
-      roundingMethod: AutoNumeric.options.roundingMethod.halfUpSymmetric,
-    };
+    //   currencySymbolPlacement:
+    //     AutoNumeric.options.currencySymbolPlacement.suffix,
+    //   roundingMethod: AutoNumeric.options.roundingMethod.halfUpSymmetric,
+    // };
 
     // Initialization
-    new AutoNumeric(".currencyinput", autoNumericOptionsEuro);
+    // new AutoNumeric(".currencyinput", autoNumericOptionsEuro);
    },
 };
 </script>

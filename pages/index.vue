@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import AutoNumeric from "autonumeric";
+// import AutoNumeric from "autonumeric";
 import Cookie from "js-cookie";
 import Procent from "../components/Procent.vue";
 import Pips from "../components/Pips.vue";

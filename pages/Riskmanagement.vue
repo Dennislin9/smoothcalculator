@@ -148,11 +148,12 @@ body {
 .container .basicinfo {
   height: 100px;
   width: 100%;
+  
   display: flex;
 }
 .basicinfo .risk {
   flex: 1;
-  line-height: 100px;
+  line-height: 100px; 
   text-align: center;
   color: #0D8FFE;
  
@@ -182,6 +183,7 @@ body {
   flex: 1;
   text-align: center;
   line-height: 30px;
+  
 }
 .steps ul {
   flex: 1;
