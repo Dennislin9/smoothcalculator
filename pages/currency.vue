@@ -17,6 +17,7 @@
     </div>
        
     <button v-on:click="thrash(index)" class="thrash">
+       
    
       <svg
         class="w-6 h-6"
@@ -31,7 +32,8 @@
           stroke-width="2"
           d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
         ></path>
-      </svg>Clear
+      </svg>
+      <p>Clear</p>
     </button>
 
     
@@ -166,14 +168,31 @@ export default {
   color: #0D8FFE;
 }
 .thrash {
-  
-  border: none;
-  background: none;
-  color: black;
-  height: 25px;
-  width: 50px;
-  margin-top: 18px;
-  margin-left: 35px;
+  display: flex;
+  height: 7vh;
+  width: 25vw;
+  margin-top: 20px;
+  margin-left: 15px;
   outline: none;
+  border-radius: 8px; 
+  float: left;
+  background: white;
+
+ 
+}
+.thrash svg{
+  color: black;
+  height: 25px;  
+  margin-top: 11px;
+  margin-left: 7px;
+
+  
+}
+.thrash p{
+  flex: 1;
+  font-size: 15px;
+  font-weight: bold;
+  background: none;
+  margin-top: 15px;
 }
 </style>

@@ -9,7 +9,9 @@
       <li v-for="(result, index) in calculate" :key="index">
         <div class="results">
           <div class="result day">{{ result.day }}</div>
-          <div :class="`result earning earning${index}`">{{ result.money }}</div>
+          <div :class="`result earning earning${index}`">
+            {{ result.money }}
+          </div>
           <div :class="`result total total${index}`">{{ result.total }}</div>
         </div>
       </li>
@@ -90,9 +92,9 @@ export default {
     let days = this.days;
     // Initialization;
     for (let i = 0; i < days; i++) {
-    new AutoNumeric(".earning"+ i, autoNumericOptionsEuro);
-    new AutoNumeric(".total" + i , autoNumericOptionsEuro);
-     }
+      new AutoNumeric(".earning" + i, autoNumericOptionsEuro);
+      new AutoNumeric(".total" + i, autoNumericOptionsEuro);
+    }
   },
   methods: {
     back() {
@@ -112,6 +114,8 @@ export default {
   font-weight: bold;
   color: #0d8ffe;
   font-size: 20px;
+  text-align: left;
+  margin-left: 35px;
 }
 .titles .title {
   flex: 1;
