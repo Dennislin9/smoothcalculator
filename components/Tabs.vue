@@ -8,9 +8,7 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          fill-rule="evenodd"
-          d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
-          clip-rule="evenodd"
+          d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
         ></path>
       </svg>
     </nuxt-link>
@@ -43,8 +41,7 @@
           clip-rule="evenodd"
         ></path>
       </svg>
-      </nuxt-link
-    >
+    </nuxt-link>
 
     <nuxt-link class="navigation-button" tag="button" to="/socialmedia"
       ><svg
@@ -99,7 +96,7 @@ export default {
     background: none;
     color: white;
     outline: none;
-    
+
     border: none;
     text-align: center;
     svg {
@@ -107,7 +104,6 @@ export default {
       margin: 0 auto;
     }
   }
-  
 }
 @media screen and (max-width: 322px) {
   .tabs {

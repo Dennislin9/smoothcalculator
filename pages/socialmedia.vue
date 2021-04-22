@@ -4,9 +4,6 @@
        Join Smoothpips 
      </div>
        
-      
-   
-  
     <div class="hallo">
       <h2 class="naam">Name</h2>
 

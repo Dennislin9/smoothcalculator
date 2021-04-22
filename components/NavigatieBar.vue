@@ -1,7 +1,7 @@
 <template>
   <h2 class="Navigatie">
     <button v-on:click="calculate" class="calculate">
-      <img src="/logo.png" alt="">
+      <img src="/navigatie1.png" alt="">
     </button>
  
     
@@ -75,9 +75,9 @@ li {
   top: 7px;
 }
 .calculate{
-  margin-top: 10px;
+  margin-top: 20px;
    width: 250px;
-  height: 45px;
+  height: 25px;
   background: none;
   border: none;
   font-size: 100%;
@@ -85,7 +85,7 @@ li {
   vertical-align: top;
 }
 .calculate img {
-  width: 200px;
+  width: 120px;
 }
 
 </style>
