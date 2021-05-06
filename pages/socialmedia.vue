@@ -129,7 +129,7 @@ export default {
 * {
 }
 .socialmedia {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   padding-top: 100px;
   padding-bottom: 100px;
