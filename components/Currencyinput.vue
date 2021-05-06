@@ -86,5 +86,6 @@ export default {
   border-radius: 4px;
   box-sizing: border-box;
   position: relative;
+      font-size: 16px;
 }
 </style>
