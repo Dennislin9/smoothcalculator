@@ -108,18 +108,21 @@ export default {
 .container {
   height: a;
 }
+*{
+  /* outline: 1px solid red; */
+}
 .titles {
   display: flex;
   height: 10px;
   font-weight: bold;
   color: #0d8ffe;
   font-size: 20px;
-  text-align: left;
-  margin-left: 35px;
+  text-align: center;
+ 
 }
 .titles .title {
   flex: 1;
-  text-align: left;
+  text-align: center;
   line-height: 30px;
 }
 .results {

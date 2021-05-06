@@ -132,6 +132,7 @@ export default {
   height: 100vh;
   width: 100%;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .buttonsend {
