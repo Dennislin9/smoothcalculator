@@ -182,11 +182,11 @@ select {
 
 }
 .button {
-  width: 90%;
+  width: 100%;
   height: 40px;
   border: none;
   margin-bottom: 50px;
-  position: fixed;
+  position: relative;
 }
 
 

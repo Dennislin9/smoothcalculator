@@ -1,10 +1,11 @@
 <template>
-  <div class="money">
-    <button v-on:click="valuta(name)" :class="`Valuta ${fiat.selected == true ? 'selected' : ''}`">
-      <p>{{ name }}</p>
-      <span v-html="currency" class="icon"></span>
-    </button>
-  </div>
+  <button
+    v-on:click="valuta(name)"
+    :class="`currency Valuta ${fiat.selected == true ? 'selected' : ''}`"
+  >
+    <p>{{ name }}</p>
+    <span v-html="currency" class="icon"></span>
+  </button>
 </template>
 
 <script>
@@ -22,14 +23,14 @@ export default {
     },
   },
   mounted() {
-
     // console.log('Cookie.get()')
-    typeof Cookie.get('pair') == 'undefined' ? console.log('no pair chosen yet') : this.$store.state.gekozenvaluta = JSON.parse(Cookie.get('pair'))
+    typeof Cookie.get("pair") == "undefined"
+      ? console.log("no pair chosen yet")
+      : (this.$store.state.gekozenvaluta = JSON.parse(Cookie.get("pair")));
     // this.$store.state.gekozenvaluta = Cookie.get("pair");
   },
   methods: {
     valuta(nieuwevaluta) {
-     
       if (this.gekozenvaluta.length > 0) {
         //find chosen valuta in array
 
@@ -39,8 +40,13 @@ export default {
         if (typeof alreadychosen == "undefined") {
           if (this.gekozenvaluta.length < 2) {
             //nieuwe valuta toevoegen
-            console.log(this.$store.state.valuta.find(e => e.naam == nieuwevaluta).selected)
-            this.$store.state.valuta.find(e => e.naam == nieuwevaluta).selected = true
+            console.log(
+              this.$store.state.valuta.find((e) => e.naam == nieuwevaluta)
+                .selected
+            );
+            this.$store.state.valuta.find(
+              (e) => e.naam == nieuwevaluta
+            ).selected = true;
             this.$store.state.gekozenvaluta.push(nieuwevaluta);
             Cookie.set("pair", this.$store.state.gekozenvaluta);
           }
@@ -48,7 +54,9 @@ export default {
       } else {
         //eerste valuta toevoegen
         this.$store.state.gekozenvaluta.push(nieuwevaluta);
-            this.$store.state.valuta.find(e => e.naam == nieuwevaluta).selected = true
+        this.$store.state.valuta.find(
+          (e) => e.naam == nieuwevaluta
+        ).selected = true;
 
         Cookie.set("pair", this.$store.state.gekozenvaluta);
       }
@@ -61,7 +69,7 @@ export default {
 
 
 <style scoped>
-.Valuta {
+/* .Valuta {
   height: 7vh;
   width: 25vw;
   margin-top: 20px;
@@ -82,5 +90,17 @@ export default {
 .icon{
   font-size: 20px;
   font-weight: normal;
+} */
+
+.currency {
+  height: 50px;
+  width: 100%;
+  background: black;
+  border: none;
+  display: block;
+  border-radius: 8px;
+  font-weight: bold;
+  line-height: 20px;
+  color: white;
 }
 </style>

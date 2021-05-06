@@ -195,10 +195,10 @@ select {
   box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
 .button {
-  width: 90%;
+   width: 100%;
   height: 40px;
   border: none;
   margin-bottom: 50px;
-  position: fixed;
+  position: relative;
 }
 </style>

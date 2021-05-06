@@ -5,6 +5,7 @@
       class="input currencyinput"
       contenteditable="true"
       @keyup="check2"
+      inputmode="decimal"
       placeholder="enter text"
     >
     </div>
@@ -66,6 +67,8 @@ export default {
   min-width: 40px;
   font-size: 30px;
   text-align: center;
+  font-family: "Poppins";
+  
   
 }
 .input[placeholder]:empty:before {

@@ -6,6 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
+    "dev:android": "npx cap open android && npm run dev",
     "generate": "nuxt generate"
   },
   "dependencies": {

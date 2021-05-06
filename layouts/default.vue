@@ -92,7 +92,7 @@ html {
   height: 100vh;
   width: 100vw;
   padding: 20px;
-  padding-top: 120px;
+  padding-top: 90px;
   margin-bottom: 120px;
   background: linear-gradient(10deg, white);
 }

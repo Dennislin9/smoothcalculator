@@ -52,6 +52,7 @@ export default {
   position: fixed;
   font-size: 30px;
   padding-top: 8px;
+  background: white;
 }
 li {
   height: 50px;

@@ -290,9 +290,9 @@ select {
 }
 
 .socials {
-  margin-top: 20px;
+  margin-bottom: 30px;
   width: 100vw;
-  height: 100px;
+  height: 90px;
   display: flex;
   border: none;
   background: none;
