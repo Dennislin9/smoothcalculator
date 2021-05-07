@@ -112,7 +112,7 @@ html {
   align-items: center;
   padding-right: 10px;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 80px;
   border-radius: 10px;
   box-shadow: 2px 8px 20px rgba(13, 143,254,.15)
 }
@@ -121,7 +121,12 @@ html {
   line-height: 40px;
   font-weight: 500px;
   font-size: 15px;
+  text-align: center;
   font-weight: bold;
+  font-family: "Poppins";
+  font-size:20px ;
+  
+ 
   
   
 }

@@ -36,63 +36,15 @@
         </button>
       </div>
     </div>
-    <!-- <div class="money">
-    <button class="Valuta"  v-on:click="thrash(index)">
-      <p>Clear</p>
-      <span class="icon"></span>
-    </button>
-  </div> -->
-    <!-- <button v-on:click="thrash(index)" class="thrash">
-       
-   
-      <svg
-        class="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-        ></path>
-      </svg>
-      <p>Clear</p>
-    </button> -->
 
     <button v-on:click="vorige" class="button vorige">
-      <svg
-        class="w-6 h-6"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-          clip-rule="evenodd"
-        ></path>
-      </svg>
+    
       <p>Back</p>
     </button>
 
     <button v-on:click="next" class="button next">
       <p>Calculate</p>
 
-      <svg
-        class="w-6 h-6"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-          clip-rule="evenodd"
-        ></path>
-      </svg>
     </button>
   </div>
 </template>
@@ -152,9 +104,7 @@ export default {
   width: 40%;
   height: 40px;
   border: none;
-  text-align: right;
   margin-bottom: 30px;
-  padding-right: 40px;
   position: fixed;
   left: 25%;
   background-image: linear-gradient(to left, #58cafb, #0d8ffe);
@@ -163,22 +113,13 @@ export default {
   right: 30px;
   padding-left: 20px;
   margin-bottom: 30px;
+  padding-right: 20px;
   left: auto;
-  text-align: left;
+  text-align: center;
   transform: translateX(0);
   background-image: linear-gradient(to right, #58cafb, #0d8ffe);
 }
-.next svg {
-  margin-left: 10px;
-  position: absolute;
-  right: 0px;
-}
 
-.vorige svg {
-  margin-left: 10px;
-  position: absolute;
-  left: 0px;
-}
 .wrp {
   min-height: 300px;
 }

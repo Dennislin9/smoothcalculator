@@ -279,7 +279,11 @@ select {
   line-height: 40px;
   font-weight: 500px;
   font-size: 18px;
-  box-shadow: 2px 8px 20px rgba(13, 143,254,.15)
+  box-shadow: 2px 8px 20px rgba(13, 143,254,.15);
+  font-size: 20px ;
+  font-family: "Poppins";
+  font-weight: bold;
+
   
 }
 .buttonsend svg {

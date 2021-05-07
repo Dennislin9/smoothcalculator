@@ -88,6 +88,7 @@ li {
 .calculate img {
   width: 120px;
   padding-bottom: 10px;
+  border: none;
 }
 
 </style>
