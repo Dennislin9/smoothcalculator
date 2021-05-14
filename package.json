@@ -13,17 +13,19 @@
     "@capacitor/android": "^2.4.7",
     "@capacitor/cli": "^2.4.7",
     "@capacitor/core": "^2.4.7",
+    "@capacitor/ios": "^2.4.7",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/pwa": "^3.3.5",
     "autonumeric": "^4.6.0",
     "core-js": "^3.8.3",
     "js-cookie": "^2.2.1",
-    "nuxt": "^2.14.12",
+    "nuxt": "^2.15.4",
     "vanilla-tilt": "^1.7.0",
     "vue-currency-input": "^1.22.6",
     "vue-select": "^3.11.2"
   },
   "devDependencies": {
+    "cordova-plugin-safearea": "^1.0.0",
     "fibers": "^5.0.0",
     "sass": "^1.32.8",
     "sass-loader": "^10.1.1"
