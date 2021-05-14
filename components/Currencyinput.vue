@@ -13,12 +13,12 @@
 </template>
 <script>
 // import AutoNumeric from "autonumeric";
-import Cookie from 'js-cookie'
+import Cookie from "js-cookie"
 export default {
   props: ["currency"],
   methods: {
     check2(e) {
-
+      console.log("check");
       Cookie.set('prevbalance', e.target.innerHTML.replace('.', ''),  { expires: 7 })
       this.$store.state.gekozenbalance =  e.target.innerHTML.replace('.', '')
      
