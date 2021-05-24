@@ -57,7 +57,7 @@ export default {
       return this.$store.state.valuta;
     },
     chosenbalance() {
-      return this.$store.state.gekozenbalance;
+      return this.$store.state.prevbalance;
     },
     chosenrisk() {
       return this.$store.state.prevrisk;
