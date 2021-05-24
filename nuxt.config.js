@@ -42,6 +42,9 @@ export default {
   buildModules: [
   ],
   pwa: {
+    icon: {
+      fileName: 'app-icon.png'
+    },
     manifest: {
       name: 'Smoothpips Calculator',
       useWebmanifestExtension: false
