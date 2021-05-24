@@ -68,7 +68,7 @@ export default {
       return arr
     },
     chosenbalance() {
-      return this.$store.state.gekozenbalance;
+      return this.$store.state.prevbalance;
     },
  days() {
       return this.$store.state.days;

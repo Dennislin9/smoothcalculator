@@ -25,7 +25,7 @@ import Cookie from "js-cookie";
 export default {
   computed: {
     chosenbalance() {
-      return parseInt(this.$store.state.gekozenbalance);
+      return parseInt(this.$store.state.prevbalance);
     },
     drr() {
       //hier gaat het mis!!!!

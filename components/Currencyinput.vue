@@ -20,22 +20,25 @@ export default {
     check2(e) {
       console.log("check");
       Cookie.set('prevbalance', e.target.innerHTML.replace('.', ''),  { expires: 7 })
-      this.$store.state.gekozenbalance =  e.target.innerHTML.replace('.', '')
+      this.$store.state.prevbalance =  e.target.innerHTML.replace('.', '')
      
     },
-    
-    gekozenbalance() {
-      return this.$store.state.gekozenbalance;
+  
+  },
+  computed: {
+      
+    prevbalance() {
+      return this.$store.state.prevbalance;
     },
-    gekozenrisk() {
-      return this.$store.state.gekozenrisk;
+    prevrisk() {
+      return this.$store.state.prevrisk;
     },
     
   },
   mounted() {
     console.log(this.currency.currency)
     console.log(Cookie.get('prevbalance'))
-    document.querySelector('.currencyinput').innerHTML = Cookie.get('prevbalance')
+    document.querySelector('.currencyinput').innerHTML = this.prevbalance
     
 
     

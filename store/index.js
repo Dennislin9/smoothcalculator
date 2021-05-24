@@ -9,8 +9,15 @@ export const state = () => ({
      */
     // risk management
     balancecurrency: 'EUR',
-    gekozenrisk: 0,
-    gekozenpips: 0,
+    prevbalance: 0,
+    prevrisk: 0,
+    prevpips: 0,
+    instagramnaam: 0,
+    days: 0, 
+    
+    balancecurrency: 'EUR',
+    prevrisk: 0,
+    prevpips: 0,
     gekozenbalance: 0,
     gekozenvaluta: [],
     // compounding
@@ -66,8 +73,8 @@ export const state = () => ({
 })
 
 export const mutations = {
-    setGekozenbalance(state, payload) {
-        state.gekozenbalance = payload
+    setField(state, payload) {
+        state[payload[0]] = payload[1]
     }
 }
 

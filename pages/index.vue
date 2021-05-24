@@ -1,15 +1,20 @@
 <template>
   <div class="container">
-    <div class="kop">
-      Calculate
-    </div>
+    <div class="kop">Calculate</div>
     <h2>Select Currency</h2>
 
-      <v-select  class="shadow-element" label="naam" :options="currency" v-model="$store.state.balancecurrency"  @input="onchange"></v-select>
+    <v-select
+      class="shadow-element"
+      label="naam"
+      :options="currency"
+      v-model="$store.state.balancecurrency"
+      @input="onchange"
+    ></v-select>
     <h2>Account Balance</h2>
-    
 
-    <Currencyinput class="shadow-element" :currency="chosencurrency" />
+    <Currencyinput  :currency="chosencurrency" />
+    <!-- <input class="shadow-element" type="number"> -->
+    <!-- <Currencyfield /> -->
 
     <h2>Risk</h2>
     <Procent class="shadow-element" :risk="chosenrisk" />
@@ -44,8 +49,8 @@ export default {
   components: { Procent },
   data() {
     return {
-      selected: 'EUR'
-    }
+      selected: "EUR",
+    };
   },
   computed: {
     currency() {
@@ -55,10 +60,10 @@ export default {
       return this.$store.state.gekozenbalance;
     },
     chosenrisk() {
-      return this.$store.state.gekozenrisk;
+      return this.$store.state.prevrisk;
     },
     chosenpips() {
-      return this.$store.state.gekozenpips;
+      return this.$store.state.prevpips;
     },
     chosencurrency() {
       return this.$store.state.valuta.find(
@@ -68,8 +73,6 @@ export default {
   },
 
   mounted() {
-
-
     console.log(this.$store.state.balancecurrency);
     // console.log(this.$store.state.valuta.find(e => e.naam ==  this.$store.state.balancecurrency))
     // document.querySelector(".balancecurrency").value = Cookie.get(
@@ -79,19 +82,18 @@ export default {
   },
   methods: {
     verzenden() {
-        let chosenbalance = this.chosenbalance
-        let chosenrisk = this.chosenrisk
-        if ((chosenbalance && chosenrisk) ==''){
+      let chosenbalance = this.chosenbalance;
+      let chosenrisk = this.chosenrisk;
+      if ((chosenbalance && chosenrisk) == "") {
         alert("empty");
       } else {
-        this.volgende()
-        
+        this.volgende();
       }
     },
     onchange(value) {
-      console.log(value)
+      console.log(value);
       Cookie.set("balancecurrency", value.naam, { expires: 7 });
-      this.$store.state.balancecurrency =value.naam;
+      this.$store.state.balancecurrency = value.naam;
     },
     volgende() {
       this.$router.push("/currency");
@@ -104,18 +106,15 @@ export default {
 
 <style scoped>
 .labBalance {
-  
-  height: 40px; 
+  height: 40px;
   width: 50px;
-  color:black;
+  color: black;
   font-size: 200%;
   background: none;
   width: 100%;
   border: none;
   margin-top: 50px;
-  font-family: 'Roboto', sans-serif;
-  
-  
+  font-family: "Roboto", sans-serif;
 }
 .risk {
   height: 40px;
@@ -126,8 +125,6 @@ export default {
   display: block;
   margin-top: 50px;
   border-radius: 10px;
-  
- 
 }
 .pips {
   /* min-height: 780px; */
@@ -139,11 +136,8 @@ export default {
   display: block;
   margin-top: 50px;
   border-radius: 10px;
-  
- 
- 
 }
-.balancecurrency{
+.balancecurrency {
   font-weight: bolder;
   color: white;
 }
@@ -159,26 +153,22 @@ select {
   border-radius: 10px;
   box-sizing: border-box;
   margin-top: 7px;
-  box-shadow: 2px 8px 20px rgba(13, 143,254,.15)
-
+  box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
 .custominput {
   margin-bottom: 30px;
-  background:#3DCBf8;
+  background: #3dcbf8;
   border-radius: 10px;
   margin-top: 7px;
   border: none;
-  box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
- 
+  box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
-.pipsinput{
+.pipsinput {
   margin-bottom: 30px;
   border-radius: 10px;
   margin-top: 7px;
   border: none;
-  box-shadow: 2px 8px 20px rgba(13, 143,254, .15);
-  
-
+  box-shadow: 2px 8px 20px rgba(13, 143, 254, 0.15);
 }
 .button {
   width: 100%;
@@ -186,12 +176,9 @@ select {
   border: none;
   margin-bottom: 50px;
   position: relative;
-  
 }
-.button p{
+.button p {
   margin-left: 30px;
-  font-size:20px ;
+  font-size: 20px;
 }
-
-
 </style>

@@ -50,13 +50,13 @@ export default {
       return this.$store.state.valuta;
     },
     chosenbalance() {
-      return this.$store.state.gekozenbalance;
+      return this.$store.state.prevbalance;
     },
     chosenrisk() {
-      return this.$store.state.gekozenrisk;
+      return this.$store.state.prevrisk;
     },
     chosenpips() {
-      return this.$store.state.gekozenpips;
+      return this.$store.state.prevpips;
     },
     chosecurrency() {
       return this.$store.state.valuta.find(

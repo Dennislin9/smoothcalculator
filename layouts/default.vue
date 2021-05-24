@@ -17,56 +17,57 @@ export default {
   },
   mounted() {
     
-    if (typeof Cookie.get("balancecurrency") != "undefined") {
-      this.$store.state.balancecurrency = Cookie.get("balancecurrency");
-    } else {
-      Cookie.set("balancecurrency", "EUR");
-    }
-    if (typeof Cookie.get("prevbalance") != "undefined") {
-      //#region 
-      this.$store.commit('setGekozenbalance', Cookie.get("prevbalance"))
-      //#endregion
-      // this.$store.state.gekozenbalance = Cookie.get("prevbalance");
-    } else {
-      this.$store.state.gekozenbalance = 0;
-    }
-    if (typeof Cookie.get("prevrisk") != "undefined") {
-      this.$store.state.gekozenrisk = Cookie.get("prevrisk");
-    } else {
-      // this.$store.state.gekozenrisk = 0
-      Cookie.set("prevrisk", 0);
-    }
-    if (typeof Cookie.get("prevpips") != "undefined") {
-      this.$store.state.gekozenpips = Cookie.get("prevpips");
-    } else {
-      this.$store.state.gekozenpips = 0;
-    }
-    if (typeof Cookie.get("previnstanaam") != "undefined") {
-      this.$store.state.instagramnaam = Cookie.get("previnstanaam");
-    } else {
-      this.$store.state.instagramnaam = 0;
-    }
-    // compounding
-    if (typeof Cookie.get("days") != "undefined") {
-      this.$store.state.days = Cookie.get("days");
-    } else {
-      this.$store.state.days = 0;
-    }
-    // if (typeof Cookie.get("dailyinterestrate") != "undefined") {
-    //   alert('asdsad')
-     
-    // //  this.$store.state.dailyinterestrate = Cookie.get("dailyinterestrate");
+    // if (typeof Cookie.get("balancecurrency") != "undefined") {
+    //   this.$store.state.balancecurrency = Cookie.get("balancecurrency");
     // } else {
-    //   this.$store.state.dailyinterestrate = 0;
+    //   Cookie.set("balancecurrency", "EUR");
     // }
-    if (typeof Cookie.get("drr") != "undefined") {
-      this.$store.state.drr = Cookie.get("drr");
-    } else {
-      // this.$store.state.drr = 0;
-    }
-    // console.log(    this.$store.state.balancecurrency = Cookie.get("balancecurrency"),
-    // this.$store.state.gekozenbalance = Cookie.get("prevbalance"),
-    // this.$store.state.gekozenrisk = Cookie.get("prevrisk"))
+    // if (typeof Cookie.get("prevbalance") != "undefined") {
+    //   //#region 
+    //   this.$store.commit('setprevbalance', Cookie.get("prevbalance"))
+      
+    //   //#endregion
+    //   // this.$store.state.prevbalance = Cookie.get("prevbalance");
+    // } else {
+    //   this.$store.state.prevbalance = 0;
+    // }
+    // if (typeof Cookie.get("prevrisk") != "undefined") {
+    //   this.$store.state.prevrisk = Cookie.get("prevrisk");
+    // } else {
+    //   // this.$store.state.prevrisk = 0
+    //   Cookie.set("prevrisk", 0);
+    // }
+    // if (typeof Cookie.get("prevpips") != "undefined") {
+    //   this.$store.state.prevpips = Cookie.get("prevpips");
+    // } else {
+    //   this.$store.state.prevpips = 0;
+    // }
+    // if (typeof Cookie.get("previnstanaam") != "undefined") {
+    //   this.$store.state.instagramnaam = Cookie.get("previnstanaam");
+    // } else {
+    //   this.$store.state.instagramnaam = 0;
+    // }
+    // // compounding
+    // if (typeof Cookie.get("days") != "undefined") {
+    //   this.$store.state.days = Cookie.get("days");
+    // } else {
+    //   this.$store.state.days = 0;
+    // }
+    // // if (typeof Cookie.get("dailyinterestrate") != "undefined") {
+    // //   alert('asdsad')
+     
+    // // //  this.$store.state.dailyinterestrate = Cookie.get("dailyinterestrate");
+    // // } else {
+    // //   this.$store.state.dailyinterestrate = 0;
+    // // }
+    // if (typeof Cookie.get("drr") != "undefined") {
+    //   this.$store.state.drr = Cookie.get("drr");
+    // } else {
+    //   // this.$store.state.drr = 0;
+    // }
+    // // console.log(    this.$store.state.balancecurrency = Cookie.get("balancecurrency"),
+    // // this.$store.state.prevbalance = Cookie.get("prevbalance"),
+    // // this.$store.state.prevrisk = Cookie.get("prevrisk"))
     
   },
 };

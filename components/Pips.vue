@@ -17,7 +17,7 @@ export default {
     check2(e) {
       console.log("check");
       Cookie.set("prevpips", e.target.value);
-      this.$store.state.gekozenpips = e.target.value;
+      this.$store.state.prevpips = e.target.value;
     }   
   },
   mounted() {

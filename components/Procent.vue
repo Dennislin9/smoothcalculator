@@ -11,6 +11,7 @@
       @keydown="check"
       v-html="risk"
     />
+
   </div>
 </template>
 <script>
@@ -23,7 +24,7 @@ export default {
   methods: {
     check2(e) {
       Cookie.set("prevrisk", e.target.value,  { expires: 7 });
-      this.$store.state.gekozenrisk = e.target.value;
+      this.$store.state.prevrisk = e.target.value;
     },
     check(e) {
    if(isNaN(e.key) == false ) {
@@ -44,9 +45,13 @@ export default {
     },
 
   },
+  computed: {
+    prevrisk() {
+      return this.$store.state.prevrisk
+    }
+  },
   mounted() {
-    document.querySelector(".percentage").value = Cookie.get("prevrisk");
-
+    document.querySelector(".percentage").value = this.prevrisk
   },
 };
 </script>
