@@ -12,7 +12,7 @@
     ></v-select>
     <h2>Account Balance</h2>
 
-    <Currencyinput  :currency="chosencurrency" />
+    <Currencyinput class="shadow-element" :currency="chosencurrency" />
     <!-- <input class="shadow-element" type="number"> -->
     <!-- <Currencyfield /> -->
 
