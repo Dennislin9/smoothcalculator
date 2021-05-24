@@ -156,7 +156,7 @@ input {
   border: none;
   outline: none;
   -webkit-appearance: none;
-  box-shadow: 2px 6px 8px rgba(13, 143, 254, 0.1);
+  // box-shadow: 2px 6px 8px rgba(13, 143, 254, 0.1);
   margin-bottom: 30px;
 }
 .v-select ul {
