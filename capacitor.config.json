@@ -1,6 +1,6 @@
 {
-  "appId": "com.smoothpipscalculator.app",
-  "appName": "(Smoothpips calculator)",
+  "appId": "com.smoothpips.calculator.app",
+  "appName": "Smoothpips calculator",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "dist",
@@ -9,6 +9,7 @@
       "launchShowDuration": 0
     }
   },
-  "cordova": {}
+  "cordova": {},
+ 
 
 }

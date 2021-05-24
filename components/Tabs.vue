@@ -81,7 +81,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .tabs {
-  height: 60px;
+  min-height: 60px;
   z-index: 9999;
   width: 100%;
   // max-width: 500px;
@@ -91,12 +91,15 @@ export default {
   box-sizing: border-box;
   position: fixed;
   bottom: 0;
+
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
   button {
     flex: 1;
     background: none;
     color: white;
     outline: none;
-
+    min-height: 50px;
     border: none;
     text-align: center;
     svg {

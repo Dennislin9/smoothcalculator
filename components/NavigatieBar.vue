@@ -1,13 +1,10 @@
 <template>
-  <h2 class="Navigatie">
-    <button v-on:click="calculate" class="calculate">
-      <img src="/navigatie1.png" alt="">
-    </button>
- 
-    
-  </h2>
+  <div class="Navigatie">
+    <div class="wrap">
+     <img src="/navigatie1.png" alt="" @click="home"/>
 
-
+    </div>
+  </div>
 </template>
 
 <script>
@@ -15,78 +12,51 @@
 export default {
   // components: { MenuSidebarSidebar },
   methods: {
-   
+    home() {
+      this.$router.push("/");
+    },
 
-  calculate(){
-    this.$router.push("/");
-  },
-
-    menu(){
-      console.log('youo')
-      if( this.$store.state.showmenu == 'closed') {
-         this.$store.state.showmenu = 'open'
+    menu() {
+      console.log("youo");
+      if (this.$store.state.showmenu == "closed") {
+        this.$store.state.showmenu = "open";
       } else {
-         this.$store.state.showmenu = 'closed'
+        this.$store.state.showmenu = "closed";
       }
       // this.$store.state.showmenu =! this.$store.state.showmenu
 
-      console.log(this.$store.state.showmenu)
+      console.log(this.$store.state.showmenu);
     },
   },
 };
 </script>
 
 
-<style scoped>
+
+<style lang="scss" scoped>
 .Navigatie {
-  min-height: 60px;
-  width: 100%;
-  min-width: 150px;
-  text-align: center;
-  backdrop-filter: blur(5px);
-  border: none;
-  color: black;
-  outline: none;
-  position: fixed;
-  font-size: 30px;
-  padding-top: 8px;
+  display: flex;
+
+  padding-top: 5px;
+
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
+  // padding-bottom: 10px;
+  min-height: 40px;
   background: white;
-}
-li {
-  height: 50px;
   width: 100%;
-  display: block;
-  border-radius: 5px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
-  padding: 10px;
+  position: fixed;
+  .wrap {
+    height: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    img {
+      height: 25px;
+    }
+  }
+  /* padding-top: calc(env(safe-area-inset-bottom) + 5px); */
 }
-
-.menu {
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: none;
-  color: black;
-  background: none;
-  position: absolute;
-  left: 10px;
-  top: 7px;
-}
-.calculate{
-  margin-top: 20px;
-   width: 250px;
-  height: 25px;
-  background: none;
-  border: none;
-  font-size: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  vertical-align: top;
-}
-.calculate img {
-  width: 120px;
-  padding-bottom: 10px;
-  border: none;
-}
-
 </style>

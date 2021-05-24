@@ -93,6 +93,8 @@ html {
   width: 100vw;
   padding: 20px;
   padding-top: 90px;
+   padding-top: calc(constant(safe-area-inset-top) + 90px);
+  padding-top: calc(env(safe-area-inset-top) + 90px);
   margin-bottom: 120px;
   background: linear-gradient(10deg, white);
 }
