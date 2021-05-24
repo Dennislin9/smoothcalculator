@@ -65,7 +65,11 @@ export const state = () => ({
 
 })
 
-
+export const mutations = {
+    setGekozenbalance(state, payload) {
+        state.gekozenbalance = payload
+    }
+}
 
 export const actions = {
     sendinvite({ state }, input) {

@@ -3,7 +3,6 @@
     <div class="kop">
       Calculate
     </div>
-     <tabs />
     <h2>Select Currency</h2>
 
       <v-select  class="shadow-element" label="naam" :options="currency" v-model="$store.state.balancecurrency"  @input="onchange"></v-select>

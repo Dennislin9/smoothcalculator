@@ -3,7 +3,7 @@
     <NavigatieBar />
     <Nuxt />
     
-    <Tabs />
+    <!-- <Tabs /> -->
   </div>
 </template>
 <script>
@@ -23,7 +23,10 @@ export default {
       Cookie.set("balancecurrency", "EUR");
     }
     if (typeof Cookie.get("prevbalance") != "undefined") {
-      this.$store.state.gekozenbalance = Cookie.get("prevbalance");
+      //#region 
+      this.$store.commit('setGekozenbalance', Cookie.get("prevbalance"))
+      //#endregion
+      // this.$store.state.gekozenbalance = Cookie.get("prevbalance");
     } else {
       this.$store.state.gekozenbalance = 0;
     }
