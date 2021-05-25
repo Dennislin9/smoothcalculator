@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">(Smoothpips calculator)</string>
-    <string name="title_activity_main">(Smoothpips calculator)</string>
-    <string name="package_name">com.smoothpipscalculator.app</string>
-    <string name="custom_url_scheme">com.smoothpipscalculator.app</string>
+    <string name="app_name">Smoothpips calculator</string>
+    <string name="title_activity_main">Smoothpips calculator</string>
+    <string name="package_name">com.smoothpips.calculator.app</string>
+    <string name="custom_url_scheme">com.smoothpips.calculator.app</string>
 </resources>

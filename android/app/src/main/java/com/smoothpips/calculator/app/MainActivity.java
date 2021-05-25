@@ -1,4 +1,4 @@
-package com.smoothpipscalculator.app;
+package com.smoothpips.calculator.app;
 
 import android.os.Bundle;
 
