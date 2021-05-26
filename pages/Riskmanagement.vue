@@ -70,7 +70,7 @@ export default {
       return (this.chosenbalance / 100) * this.chosenrisk;
     },
     pipscount(){
-      return this.chosenpips * 10
+      return this.chosenpips <= 0 ? 1 * 100 : this.chosenpips * 10
     }
   },
   methods: {
