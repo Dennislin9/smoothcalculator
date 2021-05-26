@@ -20,7 +20,7 @@
       <ul>
         <li v-for="i in 50" :key="i">
           <div class="stoploss">{{ i }}</div>
-          <div class="lots">{{ calculate(i).toFixed(2) }}</div>
+          <div class="lots">{{ calculate(i).toFixed(3) }}</div>
         </li>
       </ul>
     </div>
