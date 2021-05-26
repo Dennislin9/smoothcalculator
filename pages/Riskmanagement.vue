@@ -18,7 +18,7 @@
         <div class="title">Lot Size</div>
       </div>
       <ul>
-        <li v-for="i in 50" :key="i">
+        <li v-for="i in pipscount" :key="i">
           <div class="stoploss">{{ i }}</div>
           <div class="lots">{{ calculate(i).toFixed(3) }}</div>
         </li>
@@ -69,6 +69,9 @@ export default {
     risk() {
       return (this.chosenbalance / 100) * this.chosenrisk;
     },
+    pipscount(){
+      return this.chosenpips * 10
+    }
   },
   methods: {
     back() {
