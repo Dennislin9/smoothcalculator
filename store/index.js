@@ -14,7 +14,7 @@ export const state = () => ({
     prevpips: 0,
     instagramnaam: 0,
     days: 0, 
-    
+    rate: [],
     balancecurrency: 'EUR',
     prevrisk: 0,
     prevpips: 0,
@@ -106,6 +106,7 @@ export const actions = {
     getcurrencies({ state }, input) {
         axios.get(`https://data.fixer.io/api/latest?access_key=1e626f1512140e71aa9da68fff877517&symbols=${input}`)
             .then(response => {
+                // JPY
                 if (response.data.rates[input] > 80) {
                     state.rate = response.data.rates[input] / 100
                     console.log(state.rate)
