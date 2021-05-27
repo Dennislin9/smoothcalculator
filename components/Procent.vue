@@ -9,6 +9,7 @@
       placeholder="voer tekst in"
       @keyup="check2"
       @keydown="check"
+      inputmode="decimal"
       v-html="risk"
     />
 
