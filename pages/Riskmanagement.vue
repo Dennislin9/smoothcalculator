@@ -9,7 +9,7 @@
     <div class="basicinfo">
       <div class="risk">{{ chosenrisk }}%</div>
       <div class="riskamount">
-        <span v-html="chosecurrency.currency"></span>{{ risk}}
+        <span v-html="(chosecurrency.currency).toFixed(2)"></span>{{ risk}}
       </div>
     </div>
     <div class="steps">
@@ -59,9 +59,9 @@ export default {
       return this.$store.state.prevpips;
     },
     chosecurrency() {
-      return parseFloat(this.$store.state.valuta.find(
+      return this.$store.state.valuta.find(
         (e) => e.naam == this.$store.state.balancecurrency
-      )).toFixed(2);
+      );
     },
     rate() {
       return this.$store.state.rate;
@@ -83,7 +83,7 @@ export default {
         let risk = this.chosenrisk;
         let pips = this.chosenpips;
         let rate = this.rate;
-
+        console.log(rate);
         let totalrisk = (balance / 100) * risk;
         let lotsize = (totalrisk * rate * 100000) / (pips * 10) / 100000;
         return lotsize;
