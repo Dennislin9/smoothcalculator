@@ -19,8 +19,8 @@
       </div>
       <ul>
         <li v-for="(pip, i) in pipscount" :key="i">
-          <div :class="`stoploss x${i}`">{{ i }}</div>
-          <div class="lots">{{ calculate(pip).toFixed(3) }}</div>
+          <div :class="`stoploss x${i}`">{{ pip }}</div>
+          <div class="lots">{{ calculate(i).toFixed(3) }}</div>
         </li>
       </ul>
     </div>
