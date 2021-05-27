@@ -59,9 +59,9 @@ export default {
       return this.$store.state.prevpips;
     },
     chosecurrency() {
-      return this.$store.state.valuta.find(
+      return parseFloat(this.$store.state.valuta.find(
         (e) => e.naam == this.$store.state.balancecurrency
-      );
+      )).toFixed(2);
     },
     rate() {
       return this.$store.state.rate;
