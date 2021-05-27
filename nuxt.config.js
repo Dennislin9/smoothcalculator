@@ -47,8 +47,14 @@ export default {
       fileName: 'app-icon.png'
     },
     manifest: {
-      name: 'Smoothpips Calculator',
-      useWebmanifestExtension: false
+      name: 'Smoothpips',
+      useWebmanifestExtension: false,
+      lang: 'en',
+      display: 'standalone',
+
+    },
+    workbox: {
+      offlineStrategy: 'CacheFirst'
     }
   },
   // Modules: https://go.nuxtjs.dev/config-modules
