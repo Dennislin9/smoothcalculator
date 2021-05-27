@@ -51,10 +51,9 @@ export default {
       useWebmanifestExtension: false,
       lang: 'en',
       display: 'standalone',
-
     },
     workbox: {
-      offlineStrategy: 'CacheFirst'
+      // offlineStrategy: 'CacheFirst'
     }
   },
   // Modules: https://go.nuxtjs.dev/config-modules
