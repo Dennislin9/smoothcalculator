@@ -9,7 +9,7 @@
     <div class="basicinfo">
       <div class="risk">{{ chosenrisk }}%</div>
       <div class="riskamount">
-        <span v-html="(chosecurrency.currency).toFixed(2)"></span>{{ risk}}
+        <span v-html="chosecurrency.currency"></span>{{ parseFloat(risk).toFixed(2)}}
       </div>
     </div>
     <div class="steps">
