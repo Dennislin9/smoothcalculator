@@ -14,7 +14,7 @@ export const state = () => ({
     prevpips: 0,
     instagramnaam: 0,
     days: 0, 
-    
+    rate: [],
     balancecurrency: 'EUR',
     prevrisk: 0,
     prevpips: 0,
