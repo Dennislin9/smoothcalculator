@@ -22,6 +22,7 @@
           <div :class="`stoploss x${i}`">{{ pip }}</div>
           <div class="lots">{{ calculate(pip).toFixed(3) }}</div>
         </li>
+        
       </ul>
     </div>
     <button v-on:click="vorige" class="button">

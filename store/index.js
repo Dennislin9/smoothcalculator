@@ -102,6 +102,7 @@ export const actions = {
             })
     },
     getcurrencies({ state }, input) {
+        state.rate = []
         axios.get(`https://data.fixer.io/api/latest?access_key=1e626f1512140e71aa9da68fff877517&symbols=${input}`)
             .then(response => {
                 if (response.data.rates[input] > 80) {
