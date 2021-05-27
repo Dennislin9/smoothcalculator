@@ -14,7 +14,7 @@ export const state = () => ({
     prevpips: 0,
     instagramnaam: 0,
     days: 0, 
-    rate: [],
+    
     balancecurrency: 'EUR',
     prevrisk: 0,
     prevpips: 0,
@@ -80,7 +80,6 @@ export const mutations = {
 
 export const actions = {
     sendinvite({ state }, input) {
-        console.log(input)
         let data = {
             "name": input.name,
             "email": input.email
@@ -99,22 +98,17 @@ export const actions = {
             }
         )
             .then(response => {
-                console.log(response.data)
                 return alert('gelukt! we sturen je spoedig een mailtje')
             })
     },
     getcurrencies({ state }, input) {
-        axios.get(`https://data.fixer.io/api/latest?access_key=1e626f1512140e71aa9da68fff877517&symbols=${input}`)
+        axios.get(`http://data.fixer.io/api/latest?access_key=b504969feab88deff82d096da3520d75&symbols=${input}`)
             .then(response => {
-                // JPY
                 if (response.data.rates[input] > 80) {
                     state.rate = response.data.rates[input] / 100
-                    console.log(state.rate)
 
                 } else {
                     state.rate = response.data.rates[input]
-                    console.log('api werkt ')
-                    console.log(state.rate)
                 }
             })
     }
@@ -129,7 +123,6 @@ export const actions = {
 //         var to_currency = 'USD';
 //         axios.get( "https://query.yahooapis.com/v1/public/yql?q=select%20rate%2Cname%20from%20csv%20where%20url%3D'http%3A%2F%2Fdownload.finance.yahoo.com%2Fd%2Fquotes%3Fs%3D" + from_currency + to_currency + "%253DX%26f%3Dl1n'%20and%20columns%3D'rate%2Cname'&format=json")
 //         .then(response => {
-//             console.log(response)
 //         })
 //         .catch(err => {
 

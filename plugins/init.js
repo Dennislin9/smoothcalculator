@@ -1,8 +1,37 @@
 import Cookie from 'js-cookie'
+import { Plugins } from '@capacitor/core';
+const { SplashScreen } = Plugins;
+
+// Hide the splash (you should do this on app launch)
+
+// Show the splash for an indefinite amount of time:
+// SplashScreen.show({
+//     autoHide: false,
+// });
+
+// // Show the splash for two seconds and then auto hide:
+// SplashScreen.show({
+//     showDuration: 2000,
+//     autoHide: true,
+// });
 export default (context) => {
 
-    console.log(context.store)
-    console.log('settings cookies..')
+
+    // Hide the splash (you should do this on app launch)
+    SplashScreen.hide();
+
+
+    // Show the splash for an indefinite amount of time:
+    SplashScreen.show({
+        autoHide: false
+    });
+
+    // Show the splash for two seconds and then automatically hide it:
+    SplashScreen.show({
+        showDuration: 2000,
+        autoHide: true
+    });
+
     let list = [
         // 'balancecurrency',
         'prevbalance',
@@ -17,7 +46,7 @@ export default (context) => {
 
         if (typeof Cookie.get(field) != "undefined") {
             // context.store.state[field] = Cookie.get(field);
-            context.store.commit('setField', [field, Cookie.get(field)] )
+            context.store.commit('setField', [field, Cookie.get(field)])
 
         } else {
             if (field == 'balancecurrency') {
@@ -78,9 +107,9 @@ export default (context) => {
     // if (typeof Cookie.get("drr") != "undefined") {
     //     this.$store.state.drr = Cookie.get("drr");
     // } else {
+
     //     // this.$store.state.drr = 0;
     // }
-    // // console.log(    this.$store.state.balancecurrency = Cookie.get("balancecurrency"),
     // // this.$store.state.gekozenbalance = Cookie.get("prevbalance"),
     // // this.$store.state.gekozenrisk = Cookie.get("prevrisk"))
 

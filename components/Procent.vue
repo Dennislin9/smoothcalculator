@@ -12,7 +12,6 @@
       inputmode="decimal"
       v-html="risk"
     />
-
   </div>
 </template>
 <script>
@@ -24,35 +23,27 @@ export default {
 
   methods: {
     check2(e) {
-      Cookie.set("prevrisk", e.target.value,  { expires: 7 });
+      Cookie.set("prevrisk", e.target.value, { expires: 7 });
       this.$store.state.prevrisk = e.target.value;
     },
     check(e) {
-   if(isNaN(e.key) == false ) {
-          console.log(e.key)
-
-       
-      } else  if(e.key == "Backspace" || "Enter") {
-          console.log('DONT PREVENT')
+      if (isNaN(e.key) == false) {
+      } else if (e.key == "Backspace" || "Enter") {
       }
-      if(e.key != "Backspace"){
-          console.log('geen backspace of enter')
-           if( isNaN(e.key) == true) {
-           console.log('ABC')
-           e.preventDefault()
-           }
+      if (e.key != "Backspace") {
+        if (isNaN(e.key) == true) {
+          e.preventDefault();
         }
-     
+      }
     },
-
   },
   computed: {
     prevrisk() {
-      return this.$store.state.prevrisk
-    }
+      return this.$store.state.prevrisk;
+    },
   },
   mounted() {
-    document.querySelector(".percentage").value = this.prevrisk
+    document.querySelector(".percentage").value = this.prevrisk;
   },
 };
 </script>
@@ -71,12 +62,11 @@ export default {
 .wrap .currency {
   min-width: 60px;
   border-radius: 10px;
-  background:#3DCBf8;
-  color:white;
-  font-weight:bold ;
+  background: #3dcbf8;
+  color: white;
+  font-weight: bold;
   font-size: 30px;
   text-align: center;
-  
 }
 .input[placeholder]:empty:before {
   content: attr(placeholder);

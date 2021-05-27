@@ -30,7 +30,6 @@ export default {
   },
   watch: {
     showmenu(x) {
-      console.log("triggered");
       if (x == "open") {
         this.show();
       } else {
@@ -45,23 +44,19 @@ export default {
   },
   methods: {
     show() {
-      console.log("triggerrrr");
       this.sidebarstyle.display = "block";
       this.$store.state.showmenu = "open";
 
       this.contentstyle.transform = "translateX(-100)";
-      console.log(this.contentstyle);
       document.querySelector(".overlay").style["display"] = "block";
     },
     hide() {
-      console.log("werkt");
       this.sidebarstyle.display = "none";
       this.$store.state.showmenu = "closed";
       this.contentstyle.transform = "translatex(0%)";
       document.querySelector(".overlay").style["display"] = "none";
     },
     logo() {
-      console.log("het werkt");
       window.open("https://smoothpipsofficial.com/");
     },
   },

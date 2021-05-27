@@ -10,7 +10,7 @@
 export default {
 methods:{
   linkin() {
-    console.log("het werkt");
+
     window.open("https://www.linkedin.com/company/smoothpips-official/");
   },
 }

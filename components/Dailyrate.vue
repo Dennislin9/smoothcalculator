@@ -31,16 +31,12 @@ export default {
     check(e) {
   
       if(isNaN(e.key) == false ) {
-          console.log(e.key)
 
        
       } else  if(e.key == "Backspace" || "Enter") {
-          console.log('DONT PREVENT')
       }
       if(e.key != "Backspace"){
-          console.log('geen backspace of enter')
            if( isNaN(e.key) == true) {
-           console.log('ABC')
            e.preventDefault()
            }
         }

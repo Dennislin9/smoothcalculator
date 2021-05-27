@@ -53,20 +53,16 @@ export default {
       });
     },
      vorige() {
-      console.log("het werkt")
       this.$router.push("/");
     },
     instagram() {
-      console.log("het werkt")
       window.open('https://www.instagram.com/smoothpips.official/');
     },
     checkmail(e) {
-      console.log("check");
       Cookie.set("previnstaemail", e.target.value);
     //   this.$store.state.instaemail = e.target.value;
     },
     checknaam(e) {
-      console.log("");
       Cookie.set("previnstanaam", e.target.value);
     //   this.$store.state.instagramnaam = e.target.value;
     },

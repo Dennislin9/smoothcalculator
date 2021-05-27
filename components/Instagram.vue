@@ -19,7 +19,6 @@ export default {
   },
   methods: {
     instagram() {
-      console.log("het werkt")
       window.open('https://www.instagram.com/smoothpips.official/');
     }
   }

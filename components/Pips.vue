@@ -16,7 +16,7 @@ export default {
   // props:[],
   methods: {
     check2(e) {
-      console.log("check");
+
       Cookie.set("prevpips", e.target.value);
       this.$store.state.prevpips = e.target.value;
     },

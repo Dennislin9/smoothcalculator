@@ -10,7 +10,7 @@
 export default {
 methods:{
   facebook() {
-    console.log("het werkt");
+
     window.open("https://www.facebook.com/Smoothpips");
   },
 }

@@ -18,7 +18,6 @@ export default {
   props: ["currency"],
   methods: {
     check2(e) {
-      console.log("check");
       Cookie.set('prevbalance', e.target.innerHTML.replace('.', ''),  { expires: 7 })
       this.$store.state.prevbalance =  e.target.innerHTML.replace('.', '')
      
@@ -36,8 +35,6 @@ export default {
     
   },
   mounted() {
-    console.log(this.currency.currency)
-    console.log(Cookie.get('prevbalance'))
     document.querySelector('.currencyinput').innerHTML = this.prevbalance
     
 

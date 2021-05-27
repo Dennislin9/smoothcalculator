@@ -17,7 +17,7 @@ export default {
     },
 
     menu() {
-      console.log("youo");
+
       if (this.$store.state.showmenu == "closed") {
         this.$store.state.showmenu = "open";
       } else {
@@ -25,7 +25,6 @@ export default {
       }
       // this.$store.state.showmenu =! this.$store.state.showmenu
 
-      console.log(this.$store.state.showmenu);
     },
   },
 };

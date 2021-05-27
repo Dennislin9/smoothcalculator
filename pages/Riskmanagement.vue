@@ -83,7 +83,7 @@ export default {
         let risk = this.chosenrisk;
         let pips = this.chosenpips;
         let rate = this.rate;
-        console.log(rate);
+
         let totalrisk = (balance / 100) * risk;
         let lotsize = (totalrisk * rate * 100000) / (pips * 10) / 100000;
         return lotsize;

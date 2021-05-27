@@ -64,7 +64,7 @@ export default {
         money = cash.toFixed(2);
         totalinvestment = newinvestment.toFixed(2);
 
-        // console.log(`Day ${i}`, ` ${money}`, `Total: ${totalinvestment}`);
+        // (`Day ${i}`, ` ${money}`, `Total: ${totalinvestment}`);
         balance = newinvestment;
         let x = balance;
         // Arr.push(`Day ${i}`, `Earning ${money}`, `Total: ${totalinvestment}`)

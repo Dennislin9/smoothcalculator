@@ -96,19 +96,15 @@ export default {
     },
 
     instagram() {
-      console.log("het werkt");
       window.open("https://www.instagram.com/smoothpips.official/");
     },
     facebook() {
-      console.log("het werkt");
       window.open("https://www.facebook.com/Smoothpips");
     },
     linkedin() {
-      console.log("het werkt");
       window.open("https://www.linkedin.com/company/smoothpips-official/");
     },
     website() {
-      console.log("het werkt");
       window.open("https://smoothpipsofficial.com/");
     },
     

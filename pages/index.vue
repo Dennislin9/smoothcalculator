@@ -73,12 +73,9 @@ export default {
   },
 
   mounted() {
-    console.log(this.$store.state.balancecurrency);
-    // console.log(this.$store.state.valuta.find(e => e.naam ==  this.$store.state.balancecurrency))
     // document.querySelector(".balancecurrency").value = Cookie.get(
     //   "balancecurrency"
     // );
-    console.log(Cookie.get("balancecurrency"));
   },
   methods: {
     verzenden() {
@@ -91,7 +88,6 @@ export default {
       }
     },
     onchange(value) {
-      console.log(value);
       Cookie.set("balancecurrency", value.naam, { expires: 7 });
       this.$store.state.balancecurrency = value.naam;
     },

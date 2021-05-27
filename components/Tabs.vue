@@ -62,9 +62,6 @@
 </template>
 <script>
 export default {
-  mounted() {
-    console.log("tabs here");
-  },
   methods: {
     app() {
       // alert('adjashjasdjkh')

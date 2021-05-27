@@ -86,12 +86,9 @@ export default {
   },
 
   mounted() {
-    console.log(this.$store.state.balancecurrency);
-    console.log(Cookie.get("balancecurrency"));
   },
   methods: {
     onchange(value) {
-      console.log(value);
       Cookie.set("drr", value, { expires: 7 });
       this.$store.state.drr = value;
     },
@@ -108,7 +105,6 @@ export default {
 
       } else {
         this.volgende()
-        console.log( "het werkt" + days +  " het werkt2" + reinvestrate  )
         
       }
     },
