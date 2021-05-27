@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavigatieBar />
-    <Nuxt keep-alive/>
+    <Nuxt/>
     
     <!-- <Tabs /> -->
   </div>
