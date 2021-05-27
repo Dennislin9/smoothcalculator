@@ -4,6 +4,7 @@
     id="pips"
     name="pips"
     placeholder="stop loss in pips "
+    inputmode="decimal"
     @keyup="check2"
   />
 </template>
@@ -18,10 +19,9 @@ export default {
       console.log("check");
       Cookie.set("prevpips", e.target.value);
       this.$store.state.prevpips = e.target.value;
-    }   
+    },
   },
   mounted() {
-    
     document.querySelector("#pips").value = Cookie.get("prevpips");
   },
 };
