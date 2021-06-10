@@ -4,7 +4,7 @@
     <div
       class="back"
       v-on:click="back"
-      v-if="$route.name == 'riskmanagement' "
+      v-if="$route.name == 'riskmanagement' || $route.name == 'Riskmanagement' "
     >
       <svg
         class="w-6 h-6"
