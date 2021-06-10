@@ -1,5 +1,6 @@
 <template>
   <div class="Navigatie">
+
     <div
       class="back"
       v-on:click="back"

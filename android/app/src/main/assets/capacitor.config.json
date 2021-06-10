@@ -11,7 +11,7 @@
   },
   "cordova": {},
   "server": {
-    "url": "https://smoothcalculator.netlify.app/",
+    "url": "http://localhost:3000",
     "cleartext": true
   }
  
