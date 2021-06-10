@@ -18,7 +18,7 @@
           clip-rule="evenodd"
         ></path>
       </svg>
-    </div> -->
+    </div> 
 
     <div class="wrap">
       <img src="/navigatie1.png" alt="" @click="home" />
