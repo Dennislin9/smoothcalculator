@@ -1,11 +1,8 @@
 <template>
   <div class="Navigatie">
-
-    <div
-      class="back"
-      v-on:click="back"
-      v-if="$route.name == 'riskmanagement' "
-    >
+    {{ $route.name }}
+    {{ $route.name == "riskmanagement" }}
+    <!-- <div class="back" v-on:click="back" v-if="$route.name == 'riskmanagement'">
       <svg
         class="w-6 h-6"
         fill="currentColor"
@@ -18,7 +15,7 @@
           clip-rule="evenodd"
         ></path>
       </svg>
-    </div>
+    </div> -->
 
     <div class="wrap">
       <img src="/navigatie1.png" alt="" @click="home" />
