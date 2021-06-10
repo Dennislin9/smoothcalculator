@@ -75,7 +75,7 @@ export default {
       Cookie.remove("pair");
     },
     next() {
-      this.$router.push("/Riskmanagement");
+      this.$router.push("/riskmanagement");
     },
   },
 };

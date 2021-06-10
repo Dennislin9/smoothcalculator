@@ -12,6 +12,7 @@
       inputmode="decimal"
       v-html="risk"
       pattern="[0-9]*"
+       lang="en-au"
     />
     <!-- <input type="number" min="0" max="99"> -->
   </div>
