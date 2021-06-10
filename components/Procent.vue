@@ -3,15 +3,16 @@
     <div class="currency">%</div>
     <input
       type="text"
-      maxlength="2"
+
       class="input percentage"
-      max="4"
+      max="100"
       placeholder="voer tekst in"
-      @keyup="check2"
-      @keydown="check"
+      @keyup="check2($event), check($event)"
+      required
       inputmode="decimal"
       v-html="risk"
     />
+    <!-- <input type="number" min="0" max="99"> -->
   </div>
 </template>
 <script>
@@ -27,13 +28,10 @@ export default {
       this.$store.state.prevrisk = e.target.value;
     },
     check(e) {
-      if (isNaN(e.key) == false) {
-      } else if (e.key == "Backspace" || "Enter") {
-      }
-      if (e.key != "Backspace") {
-        if (isNaN(e.key) == true) {
-          e.preventDefault();
-        }
+      if(e.target.value < 100) {
+        e.target.value = e.target.value 
+      } else {
+        e.target.value = 1
       }
     },
   },

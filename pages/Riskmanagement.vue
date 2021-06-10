@@ -9,7 +9,8 @@
     <div class="basicinfo">
       <div class="risk">{{ chosenrisk }}%</div>
       <div class="riskamount">
-        <span v-html="chosecurrency.currency"></span>{{ parseFloat(risk).toFixed(2)}}
+        <span v-html="chosecurrency.currency"></span
+        >{{ parseFloat(risk).toFixed(2) }}
       </div>
     </div>
     <div class="steps">
@@ -17,28 +18,23 @@
         <div class="title">Stop Loss</div>
         <div class="title">Lot Size</div>
       </div>
-      <ul>
-        <li v-for="(pip, i) in pipscount" :key="i">
+
+      <ul class="pipresults">
+        <li
+          v-for="(pip, i) in pipscount"
+          :key="i"
+          :class="`${pip == chosenpips ? 'chosenpip' : ''}`"
+        >
+         <a href="#chosenpip"></a>
           <div :class="`stoploss x${i}`">{{ pip }}</div>
+
+         
           <div class="lots">{{ calculate(pip).toFixed(3) }}</div>
         </li>
-        
       </ul>
     </div>
-    <button v-on:click="vorige" class="button">
-      <svg
-        class="w-6 h-6"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
-          clip-rule="evenodd"
-        ></path>
-      </svg>
-      <p class="txt">Back</p>
+    <button v-on:click="Tradingview" class="button">
+      <p class="txt">Tradingview</p>
     </button>
   </div>
 </template>
@@ -70,14 +66,14 @@ export default {
     risk() {
       return (this.chosenbalance / 100) * this.chosenrisk;
     },
-    pipscount(){
-      return this.chosenpips <= 0 ? 1 * 100 : this.chosenpips * 10
-    }
+    pipscount() {
+      return this.chosenpips <= 0 ? 1 * 100 : this.chosenpips * 10;
+    },
+    chosencurrency() {
+      return this.$store.state.gekozenvaluta;
+    },
   },
   methods: {
-    back() {
-      this.$router.push("/currency");
-    },
     calculate(x) {
       if (x == this.chosenpips) {
         let balance = this.chosenbalance;
@@ -98,13 +94,19 @@ export default {
         return lotsize;
       }
     },
-    vorige() {
-      // alert('adjashjasdjkh')
-      this.$router.push("/currency");
+    Tradingview() {
+      window.open(
+        `https://www.tradingview.com/chart/?symbol=${
+          this.chosencurrency[0] + this.chosencurrency[1]
+        }&offer_id=10&aff_id=26974`
+      );
     },
   },
   mounted() {
     this.$store.dispatch("getcurrencies", JSON.parse(Cookie.get("pair"))[1]);
+    // document.querySelector('pipresults').scrollTo()
+
+   document.querySelector('.chosenpip').scrollIntoView();
   },
 };
 </script>
@@ -112,6 +114,7 @@ export default {
 body {
   margin: 0;
 }
+
 .button {
   width: 90%;
   height: 40px;
@@ -120,12 +123,12 @@ body {
   position: absolute;
   margin-top: 20px;
 }
-.txt{
+.txt {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-.button svg{
+.button svg {
   margin-left: 20px;
 }
 .basicinfo {
@@ -140,7 +143,7 @@ body {
   height: 100vh;
   width: 100vw;
   display: flex;
-  padding-top: 30px;
+  padding-top: 1px;
   flex-direction: column;
 }
 .container .pair {
@@ -152,20 +155,19 @@ body {
 .container .basicinfo {
   height: 100px;
   width: 100%;
-  
+
   display: flex;
 }
 .basicinfo .risk {
   flex: 1;
-  line-height: 100px; 
+  line-height: 100px;
   text-align: center;
-  color: #0D8FFE;
- 
+  color: #0d8ffe;
 }
 .basicinfo .riskamount {
   flex: 1;
   line-height: 100px;
-  color: #0D8FFE;
+  color: #0d8ffe;
   text-align: center;
 }
 .container .steps {
@@ -180,14 +182,12 @@ body {
   height: 10px;
   font-weight: bold;
   color: black;
-  font-size: 20px; 
-
+  font-size: 20px;
 }
 .titles .title {
   flex: 1;
   text-align: center;
   line-height: 30px;
-  
 }
 .steps ul {
   flex: 1;
@@ -201,18 +201,25 @@ li {
   width: 100%;
   height: 40px;
   display: flex;
-  
 }
 
 li .stoploss {
   flex: 1;
   text-align: center;
+  margin: auto;
 }
 li .lots {
   flex: 1;
   text-align: center;
+   margin: auto;
 }
 .titles {
   color: black;
+}
+.chosenpip  {
+  background: #58cafb;
+  border-radius: 8px;
+  
+  
 }
 </style>

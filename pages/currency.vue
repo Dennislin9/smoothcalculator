@@ -2,7 +2,6 @@
   <div class="container">
     <div class="wrp">
       <h2>Currency Pair:</h2>
-
       <div class="returnvaluta">
         {{ chosencurrency[0] }} <span class="streep">|</span>
         {{ chosencurrency[1] }}
@@ -69,6 +68,7 @@ export default {
     },
     thrash() {
       this.$store.state.gekozenvaluta = [];
+      this.$store.commit('setvaluta',[])
       for (let i = 0; i < this.$store.state.valuta.length; i++) {
         this.$store.state.valuta[i].selected = false;
       }

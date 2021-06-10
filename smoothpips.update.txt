@@ -1,0 +1,5 @@
+smoothpips Update
+
+- cookies op select currency 
+- risk moet 0.5 kunnen 
+- stoploss in pips moet meegenomen worden. 

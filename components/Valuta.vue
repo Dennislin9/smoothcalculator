@@ -26,8 +26,10 @@ export default {
     // console.log('Cookie.get()')
     typeof Cookie.get("pair") == "undefined"
       ? console.log("no pair chosen yet")
-      : (this.$store.state.gekozenvaluta = JSON.parse(Cookie.get("pair")));
+      : this.$store.commit('setvaluta',JSON.parse(Cookie.get("pair") ))
     // this.$store.state.gekozenvaluta = Cookie.get("pair");
+
+    
   },
   methods: {
     valuta(nieuwevaluta) {
@@ -44,16 +46,20 @@ export default {
               this.$store.state.valuta.find((e) => e.naam == nieuwevaluta)
                 .selected
             );
-            this.$store.state.valuta.find(
-              (e) => e.naam == nieuwevaluta
-            ).selected = true;
-            this.$store.state.gekozenvaluta.push(nieuwevaluta);
+            // mutation error
+            this.$store.state.valuta.find( (e) => e.naam == nieuwevaluta ).selected = true;
+  
+            // this.$store.state.gekozenvaluta.push(nieuwevaluta);
+            this.$store.commit('addvaluta',nieuwevaluta);
             Cookie.set("pair", this.$store.state.gekozenvaluta);
           }
         }
       } else {
         //eerste valuta toevoegen
-        this.$store.state.gekozenvaluta.push(nieuwevaluta);
+        // this.$store.state.gekozenvaluta.push(nieuwevaluta);
+        this.$store.commit('addvaluta',nieuwevaluta);
+
+        // mutation error
         this.$store.state.valuta.find(
           (e) => e.naam == nieuwevaluta
         ).selected = true;
