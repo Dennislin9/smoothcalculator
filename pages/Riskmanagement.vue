@@ -105,7 +105,6 @@ export default {
   mounted() {
     this.$store.dispatch("getcurrencies", JSON.parse(Cookie.get("pair"))[1]);
     // document.querySelector('pipresults').scrollTo()
-
    document.querySelector('.chosenpip').scrollIntoView();
   },
 };

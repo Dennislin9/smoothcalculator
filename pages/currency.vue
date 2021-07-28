@@ -56,6 +56,8 @@ export default {
   computed: {
     chosencurrency() {
       return this.$store.state.gekozenvaluta;
+      //  return this.$store.commit.addvaluta;
+   
     },
     valuta() {
       return this.$store.state.valuta;
@@ -67,7 +69,7 @@ export default {
       this.$router.push("/");
     },
     thrash() {
-      this.$store.state.gekozenvaluta = [];
+      // this.$store.state.gekozenvaluta = [];
       this.$store.commit('setvaluta',[])
       for (let i = 0; i < this.$store.state.valuta.length; i++) {
         this.$store.state.valuta[i].selected = false;

@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="currency">%</div>
     <input
-      type="text"
+      type="number"
       maxlength="2"
       class="input percentage"
       max="4"
@@ -10,6 +10,8 @@
       @keyup="check2"
       @keydown="check"
       v-html="dailyinterestrate"
+        pattern="[0-9]*"
+       lang="en-au"
     />
   </div>
 </template>
@@ -26,27 +28,25 @@ export default {
   methods: {
     check2(e) {
       Cookie.set("previr", e.target.value, { expires: 7 });
-      this.$store.state.dailyinterestrate = e.target.value;
+      // this.$store.state.dailyinterestrate = e.target.value;
+      this.$store.commit("rate",e.target.value)
     },
     check(e) {
-  
-      if(isNaN(e.key) == false ) {
-
-       
-      } else  if(e.key == "Backspace" || "Enter") {
+      if (isNaN(e.key) == false) {
+      } else if (e.key == "Backspace" || "Enter") {
       }
-      if(e.key != "Backspace"){
-           if( isNaN(e.key) == true) {
-           e.preventDefault()
-           }
+      if (e.key != "Backspace") {
+        if (isNaN(e.key) == true) {
+          e.preventDefault();
         }
-     
+      }
     },
   },
   mounted() {
     if (typeof Cookie.get("previr") != "undefined") {
       document.querySelector(".percentage").value = Cookie.get("previr");
       this.$store.state.dailyinterestrate = Cookie.get("previr");
+      // this.$store.commit.rate = Cookie.get("previr");
     }
   },
 };

@@ -28,7 +28,7 @@
       </svg>
     </nuxt-link>
 
-    <nuxt-link class="navigation-button" tag="button" to="/time"
+    <nuxt-link class="navigation-button" tag="button" to="/exchange"
       ><svg
         class="w-6 h-6"
         fill="currentColor"
@@ -36,9 +36,7 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          fill-rule="evenodd"
-          d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-          clip-rule="evenodd"
+          d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z"
         ></path>
       </svg>
     </nuxt-link>

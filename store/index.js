@@ -7,6 +7,11 @@ export const state = () => ({
      * -b504969feab88deff82d096da3520d75
      * https://data.fixer.io/api/latest?access_key=API_KEY&base=USD
      */
+    //TIME
+    currency1: 'EUR',
+    currency2: 'USD',
+
+
     // risk management
     balancecurrency: 'EUR',
     prevbalance: 0,
@@ -80,12 +85,46 @@ export const mutations = {
         state.gekozenvaluta.push(payload)
     },
     selectvaluta(state, payload) {
-
+        state.gekozenvaluta.push(payload)
     },
-    
     setcurrencies(state, payload) {
         state.rate = payload
     },
+    //wat dennis gedaan heeft 
+
+    balancecurrency(state, payload) {
+        state.balancecurrency = payload
+    },
+    chosenvaluta(state, nieuwevaluta) {
+        state.valuta((e) => e.naam == nieuwevaluta).selected = true;
+    },
+    compound(state, payload) {
+        state.days = payload
+    },
+    rate(state, payload) {
+        state.dailyinterestrate = payload
+    },
+
+    // moet reloaden om te werken 
+    balance(state, payload) {
+        state.prevbalance = payload
+    },
+    prevrisk(state, payload) {
+        state.prevrisk = payload
+    },
+    prevpips(state, payload) {
+        state.prevpips = payload
+    },
+    //time 
+    balancecurrency1(state, payload) {
+        state.currency1 = payload
+    },
+    balancecurrency2(state, payload) {
+        state.currency2 = payload
+    },
+
+
+
 
 }
 
@@ -113,20 +152,32 @@ export const actions = {
                 return alert('gelukt! we sturen je spoedig een mailtje')
             })
     },
-    getcurrencies({commit, state }, input) {
+    getcurrencies({ commit, state }, input) {
         commit('setcurrencies', [])
         axios.get(`https://data.fixer.io/api/latest?access_key=1e626f1512140e71aa9da68fff877517&symbols=${input}`)
             .then(response => {
                 if (response.data.rates[input] > 80) {
-                   
+
                     commit('setcurrencies', response.data.rates[input] / 100)
                 } else {
-                    
+
                     commit('setcurrencies', response.data.rates[input])
 
                 }
             })
-    }
+    },
+    fetchData() {
+        fetch(
+            `https://data.fixer.io/api/latest?access_key=1e626f1512140e71aa9da68fff877517&symbols=`
+        )
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                this.data = data;
+                this.rates = data.rates[this.balancecurrency2];
+                this.amountTwo = this.amountOne * this.rates.toFixed(2);
+            });
+    },
 }
 
 // 

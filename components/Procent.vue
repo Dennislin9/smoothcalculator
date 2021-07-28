@@ -27,7 +27,7 @@ export default {
   methods: {
     check2(e) {
       Cookie.set("prevrisk", e.target.value, { expires: 7 });
-      this.$store.state.prevrisk = e.target.value;
+      this.$store.commit('prevrisk',e.target.value)
     },
     check(e) {
       if(e.target.value < 100) {

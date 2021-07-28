@@ -16,7 +16,11 @@ export default {
   methods: {
     check2(e) {
       Cookie.set("days", e.target.value);
-      this.$store.state.days = e.target.value;
+      //error
+      // this.$store.state.days = e.target.value;
+      this.$store.commit("compound", e.target.value)
+      
+     
     }   
   },
   mounted() {

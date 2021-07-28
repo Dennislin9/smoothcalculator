@@ -26,10 +26,8 @@ export default {
     // console.log('Cookie.get()')
     typeof Cookie.get("pair") == "undefined"
       ? console.log("no pair chosen yet")
-      : this.$store.commit('setvaluta',JSON.parse(Cookie.get("pair") ))
+      : this.$store.commit("setvaluta", JSON.parse(Cookie.get("pair")));
     // this.$store.state.gekozenvaluta = Cookie.get("pair");
-
-    
   },
   methods: {
     valuta(nieuwevaluta) {
@@ -38,7 +36,10 @@ export default {
 
         let alreadychosen = this.$store.state.gekozenvaluta.find(
           (element) => element == nieuwevaluta
+
+          // let alreadychosen = this.$store.commit('selectvaluta',nieuwevaluta)
         );
+
         if (typeof alreadychosen == "undefined") {
           if (this.gekozenvaluta.length < 2) {
             //nieuwe valuta toevoegen
@@ -47,22 +48,23 @@ export default {
                 .selected
             );
             // mutation error
-            this.$store.state.valuta.find( (e) => e.naam == nieuwevaluta ).selected = true;
-  
-            // this.$store.state.gekozenvaluta.push(nieuwevaluta);
-            this.$store.commit('addvaluta',nieuwevaluta);
+            //this.$store.state.valuta.find( (e) => e.naam == nieuwevaluta ).selected = true;
+            this.$store.commit("valuta");
+           
+            this.$store.commit("addvaluta", nieuwevaluta);
             Cookie.set("pair", this.$store.state.gekozenvaluta);
           }
         }
       } else {
-        //eerste valuta toevoegen
-        // this.$store.state.gekozenvaluta.push(nieuwevaluta);
-        this.$store.commit('addvaluta',nieuwevaluta);
+        
+        
+        this.$store.commit("addvaluta", nieuwevaluta);
 
         // mutation error
-        this.$store.state.valuta.find(
-          (e) => e.naam == nieuwevaluta
-        ).selected = true;
+        // this.$store.state.valuta.find(
+        //   (e) => e.naam == nieuwevaluta
+        // ).selected = true;
+         this.$store.commit('valuta');
 
         Cookie.set("pair", this.$store.state.gekozenvaluta);
       }

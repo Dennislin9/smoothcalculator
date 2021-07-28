@@ -19,7 +19,9 @@ export default {
   methods: {
     check2(e) {
       Cookie.set('prevbalance', e.target.innerHTML.replace('.', ''),  { expires: 7 })
-      this.$store.state.prevbalance =  e.target.innerHTML.replace('.', '')
+      //this.$store.state.prevbalance =  e.target.innerHTML.replace('.', '')
+     
+      this.$store.commit('balance',e.target.innerHTML.replace('.', ''))
      
     },
   
@@ -35,6 +37,7 @@ export default {
     
   },
   mounted() {
+    
     document.querySelector('.currencyinput').innerHTML = this.prevbalance
     
 

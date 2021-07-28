@@ -3,7 +3,7 @@
     <NavigatieBar />
     <Nuxt/>
     
-    <!-- <Tabs /> -->
+    <Tabs />
   </div>
 </template>
 <style lang="scss">
@@ -33,7 +33,7 @@ html {
   padding-top: 90px;
    padding-top: calc(constant(safe-area-inset-top) + 90px);
   padding-top: calc(env(safe-area-inset-top) + 90px);
-  margin-bottom: 120px;
+  margin-bottom: 60px;
   background: linear-gradient(10deg, white);
 }
 .button {

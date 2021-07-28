@@ -27,7 +27,7 @@
 
 
     <!-- <Customswitch/> -->
-    <button v-on:click="verzenden(index)" class="button">
+    <button v-on:click="verzenden()" class="button">
       <p>Calculate</p>
       <svg
         class="w-6 h-6"
@@ -98,6 +98,8 @@ export default {
       let days              = this.days
       let dailyinterestrate = this.dailyinterestrate
 
+
+      console.log(chosenbalance, days, dailyinterestrate)
 
       
       if ((  chosenbalance && days && dailyinterestrate) ==''){
