@@ -261,6 +261,7 @@ select {
   text-align: left;
   margin-left: 35px;
   margin-right: 20px;
+
 }
 .title {
   margin-left: 5px;

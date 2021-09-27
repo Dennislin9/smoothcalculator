@@ -70,6 +70,11 @@ export const state = () => ({
             naam: 'USD',
             selected: false
         },
+        {
+            currency: '&#9868;',
+            naam: 'XAU',
+            selected: false
+        },
     ],
 
 })
